@@ -309,7 +309,7 @@ body {
 }
 
 .slide img {
-  width: 100%;
+  width: 180%;
   height: 330px;
   object-fit: cover;
 }
@@ -350,6 +350,21 @@ body {
 .scroll-container::-webkit-scrollbar-thumb {
   background: #666;
   border-radius: 10px;
+}
+.detail {
+  color: #555;
+  line-height: 1.4;
+}
+
+.btn-detail {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #0078ff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
 }
 .card {
   min-width: 400px;
@@ -394,6 +409,7 @@ body {
   line-height: 2;
   font-size: 1.3rem;
   max-width: 90rem;
+  color: #000;
 }
 .body {
   font-family: Arial, sans-serif;
