@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANDIKA BALI TOUR</title>
+
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Momo+Trust+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--feather icons-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!--my style-->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!--navbar start-->
+    <nav class="navbar">
+      <img src="./img/logo.png" alt="Logokiri" class="logo" />
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Paket Tour</a>
+        <a href="#menu">Kegiatan Lain</a>
+        <a href="#rental">Car Rental</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+      <div id="google_translate_element" class="mini-translate"></div>
+    </nav>
+    <!--navbar end-->
+
+    <!--Herro section start-->
+
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Selamat Datang di Andika Bali Tour</h1>
+        <p>
+          Andika Bali Tour, biro perjalanan resmi di Bali dengan Nomor Induk
+          Berusaha (NIB) 9120007512702 dan terdaftar dalam KBLI 79121 (Biro
+          Perjalanan Wisata) & KBLI 79111 (Agen Perjalanan Wisata). Kami
+          menawarkan layanan rental mobil dengan supir. Selain itu, tersedia
+          juga paket wisata pribadi, beragam aktivitas liburan, serta panduan
+          wisata yang informatif dan menarik.
+        </p>
+        <a href="#about" class="cta">Paket Tour</a>
+        <a href="https://wa.me/6285886022912" class="wa-icon" target="_blank">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt="WhatsApp"
+          />
+        </a>
+      </main>
+    </section>
+
+    <!--Herro section end-->
+
+    <!-- Floating Translate Button -->
+    <div class="translate-float" onclick="toggleLangFloat()">🌍</div>
+
+    <div class="translate-options" id="langFloat">
+      <span onclick="doTranslate('en')">🇺🇸 English</span>
+      <span onclick="doTranslate('id')">🇮🇩 Indonesian</span>
+      <span onclick="doTranslate('hi')">🇮🇳 Hindi</span>
+      <span onclick="doTranslate('ja')">🇯🇵 Japanese</span>
+      <span onclick="doTranslate('jw')">🇮🇩 Javanese</span>
+      <span onclick="doTranslate('af')">🇿🇦 Afrikaans</span>
+      <span onclick="doTranslate('sq')">🇦🇱 Albanian</span>
+      <span onclick="doTranslate('am')">🇪🇹 Amharic</span>
+      <span onclick="doTranslate('ar')">🇸🇦 Arabic</span>
+      <span onclick="doTranslate('hy')">🇦🇲 Armenian</span>
+      <span onclick="doTranslate('az')">🇦🇿 Azerbaijani</span>
+      <span onclick="doTranslate('eu')">🇪🇸 Basque</span>
+      <span onclick="doTranslate('be')">🇧🇾 Belarusian</span>
+      <span onclick="doTranslate('bn')">🇧🇩 Bengali</span>
+      <span onclick="doTranslate('bs')">🇧🇦 Bosnian</span>
+      <span onclick="doTranslate('bg')">🇧🇬 Bulgarian</span>
+      <span onclick="doTranslate('ca')">🇪🇸 Catalan</span>
+      <span onclick="doTranslate('ceb')">🇵🇭 Cebuano</span>
+      <span onclick="doTranslate('zh-CN')">🇨🇳 Chinese (Simplified)</span>
+      <span onclick="doTranslate('zh-TW')">🇹🇼 Chinese (Traditional)</span>
+      <span onclick="doTranslate('co')">🇫🇷 Corsican</span>
+      <span onclick="doTranslate('hr')">🇭🇷 Croatian</span>
+      <span onclick="doTranslate('cs')">🇨🇿 Czech</span>
+      <span onclick="doTranslate('da')">🇩🇰 Danish</span>
+      <span onclick="doTranslate('nl')">🇳🇱 Dutch</span>
+      <span onclick="doTranslate('eo')">🌍 Esperanto</span>
+      <span onclick="doTranslate('et')">🇪🇪 Estonian</span>
+      <span onclick="doTranslate('fi')">🇫🇮 Finnish</span>
+      <span onclick="doTranslate('fr')">🇫🇷 French</span>
+      <span onclick="doTranslate('fy')">🇳🇱 Frisian</span>
+      <span onclick="doTranslate('gl')">🇪🇸 Galician</span>
+      <span onclick="doTranslate('ka')">🇬🇪 Georgian</span>
+      <span onclick="doTranslate('de')">🇩🇪 German</span>
+      <span onclick="doTranslate('el')">🇬🇷 Greek</span>
+      <span onclick="doTranslate('gu')">🇮🇳 Gujarati</span>
+      <span onclick="doTranslate('ht')">🇭🇹 Haitian Creole</span>
+      <span onclick="doTranslate('ha')">🇳🇬 Hausa</span>
+      <span onclick="doTranslate('haw')">🇺🇸 Hawaiian</span>
+      <span onclick="doTranslate('iw')">🇮🇱 Hebrew</span>
+      <span onclick="doTranslate('hmn')">🇨🇳 Hmong</span>
+      <span onclick="doTranslate('hu')">🇭🇺 Hungarian</span>
+      <span onclick="doTranslate('is')">🇮🇸 Icelandic</span>
+      <span onclick="doTranslate('ig')">🇳🇬 Igbo</span>
+      <span onclick="doTranslate('ga')">🇮🇪 Irish</span>
+      <span onclick="doTranslate('it')">🇮🇹 Italian</span>
+      <span onclick="doTranslate('kn')">🇮🇳 Kannada</span>
+      <span onclick="doTranslate('kk')">🇰🇿 Kazakh</span>
+      <span onclick="doTranslate('km')">🇰🇭 Khmer</span>
+      <span onclick="doTranslate('rw')">🇷🇼 Kinyarwanda</span>
+      <span onclick="doTranslate('ko')">🇰🇷 Korean</span>
+      <span onclick="doTranslate('ku')">🇮🇶 Kurdish</span>
+      <span onclick="doTranslate('ky')">🇰🇬 Kyrgyz</span>
+      <span onclick="doTranslate('lo')">🇱🇦 Lao</span>
+      <span onclick="doTranslate('la')">🏛 Latin</span>
+      <span onclick="doTranslate('lv')">🇱🇻 Latvian</span>
+      <span onclick="doTranslate('lt')">🇱🇹 Lithuanian</span>
+      <span onclick="doTranslate('lb')">🇱🇺 Luxembourgish</span>
+      <span onclick="doTranslate('mk')">🇲🇰 Macedonian</span>
+      <span onclick="doTranslate('mg')">🇲🇬 Malagasy</span>
+      <span onclick="doTranslate('ms')">🇲🇾 Malay</span>
+      <span onclick="doTranslate('ml')">🇮🇳 Malayalam</span>
+      <span onclick="doTranslate('mt')">🇲🇹 Maltese</span>
+      <span onclick="doTranslate('mi')">🇳🇿 Maori</span>
+      <span onclick="doTranslate('mr')">🇮🇳 Marathi</span>
+      <span onclick="doTranslate('mn')">🇲🇳 Mongolian</span>
+      <span onclick="doTranslate('my')">🇲🇲 Myanmar (Burmese)</span>
+      <span onclick="doTranslate('ne')">🇳🇵 Nepali</span>
+      <span onclick="doTranslate('no')">🇳🇴 Norwegian</span>
+      <span onclick="doTranslate('ny')">🇲🇼 Nyanja</span>
+      <span onclick="doTranslate('or')">🇮🇳 Odia</span>
+      <span onclick="doTranslate('ps')">🇦🇫 Pashto</span>
+      <span onclick="doTranslate('fa')">🇮🇷 Persian</span>
+      <span onclick="doTranslate('pl')">🇵🇱 Polish</span>
+      <span onclick="doTranslate('pt')">🇵🇹 Portuguese</span>
+      <span onclick="doTranslate('pa')">🇮🇳 Punjabi</span>
+      <span onclick="doTranslate('ro')">🇷🇴 Romanian</span>
+      <span onclick="doTranslate('ru')">🇷🇺 Russian</span>
+      <span onclick="doTranslate('sm')">🇼🇸 Samoan</span>
+      <span onclick="doTranslate('gd')">🏴 Scottish Gaelic</span>
+      <span onclick="doTranslate('sr')">🇷🇸 Serbian</span>
+      <span onclick="doTranslate('st')">🇱🇸 Sesotho</span>
+      <span onclick="doTranslate('sn')">🇿🇼 Shona</span>
+      <span onclick="doTranslate('sd')">🇵🇰 Sindhi</span>
+      <span onclick="doTranslate('si')">🇱🇰 Sinhala</span>
+      <span onclick="doTranslate('sk')">🇸🇰 Slovak</span>
+      <span onclick="doTranslate('sl')">🇸🇮 Slovenian</span>
+      <span onclick="doTranslate('so')">🇸🇴 Somali</span>
+      <span onclick="doTranslate('es')">🇪🇸 Spanish</span>
+      <span onclick="doTranslate('su')">🇮🇩 Sundanese</span>
+      <span onclick="doTranslate('sw')">🇰🇪 Swahili</span>
+      <span onclick="doTranslate('sv')">🇸🇪 Swedish</span>
+      <span onclick="doTranslate('tl')">🇵🇭 Tagalog</span>
+      <span onclick="doTranslate('tg')">🇹🇯 Tajik</span>
+      <span onclick="doTranslate('ta')">🇮🇳 Tamil</span>
+      <span onclick="doTranslate('tt')">🇷🇺 Tatar</span>
+      <span onclick="doTranslate('te')">🇮🇳 Telugu</span>
+      <span onclick="doTranslate('th')">🇹🇭 Thai</span>
+      <span onclick="doTranslate('tr')">🇹🇷 Turkish</span>
+      <span onclick="doTranslate('tk')">🇹🇲 Turkmen</span>
+      <span onclick="doTranslate('uk')">🇺🇦 Ukrainian</span>
+      <span onclick="doTranslate('ur')">🇵🇰 Urdu</span>
+      <span onclick="doTranslate('ug')">🇨🇳 Uyghur</span>
+      <span onclick="doTranslate('uz')">🇺🇿 Uzbek</span>
+      <span onclick="doTranslate('vi')">🇻🇳 Vietnamese</span>
+      <span onclick="doTranslate('cy')">🏴 Welsh</span>
+      <span onclick="doTranslate('xh')">🇿🇦 Xhosa</span>
+      <span onclick="doTranslate('yi')">🇮🇱 Yiddish</span>
+      <span onclick="doTranslate('yo')">🇳🇬 Yoruba</span>
+      <span onclick="doTranslate('zu')">🇿🇦 Zulu</span>
+    </div>
+    <!-- Floating Translate Button end -->
+
+    <!--About section Start-->
+
+    <section id="about" class="about">
+      <h2><span>Paket</span> Tour</h2>
+
+      <div class="scroll-wrapper">
+        <!-- Tombol Scroll Kiri -->
+        <button class="scroll-btn left" onclick="scrollLeft()">❮</button>
+
+        <div class="scroll-container" id="scrollArea">
+          <div class="img-box">
+            <img src="https://picsum.photos/300/200?random=11" />
+            <h3>Paket Pura Lempuyang</h3>
+            <p class="price">Rp 350.000</p>
+          </div>
+
+          <div class="img-box">
+            <img src="https://picsum.photos/300/200?random=12" />
+            <div class="img-text">Paket Gunung</div>
+            <p class="price">Rp 450.000</p>
+          </div>
+
+          <div class="img-box">
+            <img src="https://picsum.photos/300/200?random=13" />
+            <a href="paket-lempuyang.html" class="cta">Paket Pura Lempuyang</a>
+            <p class="price">Rp 550.000</p>
+          </div>
+
+          <div class="img-box">
+            <img src="https://picsum.photos/300/200?random=14" />
+            <h3>Paket Hutan</h3>
+            <p class="price">Rp 500.000</p>
+          </div>
+        </div>
+
+        <!-- Tombol Scroll Kanan -->
+        <button class="scroll-btn right" onclick="scrollRight()">❯</button>
+      </div>
+    </section>
+
+    <!--About section end-->
+
+    <!--Menu section Start-->
+
+    <section id="menu" class="menu">
+      <h2><span>Kegiatan yang</span> Menyenangkan</h2>
+      <div class="scroll-wrapper">
+        <!-- Tombol Scroll Kiri -->
+        <button class="scroll-btn left" onclick="scrollLeft()">❮</button>
+
+        <div class="scroll-container" id="scrollArea">
+          <div class="card">
+            <img src="https://picsum.photos/300/200?random=11" />
+            <h3>Paket Pantai</h3>
+            <p class="price">Rp 350.000</p>
+          </div>
+
+          <div class="card">
+            <img src="https://picsum.photos/300/200?random=12" />
+            <h3>Paket Gunung</h3>
+            <p class="price">Rp 450.000</p>
+          </div>
+
+          <div class="card">
+            <img src="https://picsum.photos/300/200?random=13" />
+            <h3>Paket Pulau</h3>
+            <p class="price">Rp 550.000</p>
+          </div>
+
+          <div class="card">
+            <img src="https://picsum.photos/300/200?random=14" />
+            <h3>Paket Hutan</h3>
+            <p class="price">Rp 500.000</p>
+          </div>
+
+          <div class="card">
+            <img src="https://picsum.photos/300/200?random=15" />
+            <h3>Paket Danau</h3>
+            <p class="price">Rp 420.000</p>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/300/200?random=15" />
+            <h3>Paket Danau</h3>
+            <p class="price">Rp 420.000</p>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/300/200?random=15" />
+            <h3>Paket Danau</h3>
+            <p class="price">Rp 420.000</p>
+          </div>
+          <div class="card">
+            <img src="https://picsum.photos/300/200?random=15" />
+            <h3>Paket Danau</h3>
+            <p class="price">Rp 420.000</p>
+          </div>
+        </div>
+
+        <!-- Tombol Scroll Kanan -->
+        <button class="scroll-btn right" onclick="scrollRight()">❯</button>
+      </div>
+    </section>
+    <!--Menu section end-->
+
+    <section id="rental" class="rental">
+      <h2><span>Paket</span> Rental</h2>
+      <div class="scroll-wrapper">
+        <!-- Tombol Scroll Kiri -->
+        <button class="scroll-btn left" onclick="scrollLeft()">❮</button>
+
+        <div class="scroll-container" id="scrollArea">
+          <div class="card">
+            <img src="./img/apv.png" />
+            <h3>suzuki APV</h3>
+            <p class="price">Rp 350.000</p>
+          </div>
+
+          <div class="card">
+            <img src="./img/avansa.png" />
+            <h3>Toyota Avansa</h3>
+            <p class="price">Rp 450.000</p>
+          </div>
+
+          <div class="card">
+            <img src="./img/haiace.png" />
+            <h3>Toyota Haiace</h3>
+            <p class="price">Rp 550.000</p>
+          </div>
+
+          <div class="card">
+            <img src="./img/rush.png" />
+            <h3>Toyota Rush</h3>
+            <p class="price">Rp 500.000</p>
+          </div>
+        </div>
+
+        <!-- Tombol Scroll Kanan -->
+        <button class="scroll-btn right" onclick="scrollRight()">❯</button>
+      </div>
+    </section>
+
+    <!--Contact section start-->
+
+    <section id="contact" class="contact">
+      <h2><span>Kontak</span> Kami</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, tempore.
+      </p>
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.050504942167!2d115.2656227732114!3d-8.63361618776913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23f581fea6f67%3A0x42296e4a10829031!2sAndika%20Bali%20Tour!5e1!3m2!1sid!2sid!4v1763776187784!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+        <form
+          id="reviewForm"
+          style="
+            max-width: 500px;
+            margin: auto;
+            color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <h3 style="text-align: center; margin-bottom: 15px">
+            Beri Ulasan Anda
+          </h3>
+
+          <label>Nama:</label>
+          <input
+            type="text"
+            id="nama"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              margin-bottom: 10px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+            "
+          />
+
+          <label>Rating:</label>
+          <select
+            id="rating"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              margin-bottom: 10px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+            "
+          >
+            <option value="5">★★★★★ (5)</option>
+            <option value="4">★★★★☆ (4)</option>
+            <option value="3">★★★☆☆ (3)</option>
+            <option value="2">★★☆☆☆ (2)</option>
+            <option value="1">★☆☆☆☆ (1)</option>
+          </select>
+
+          <label>Ulasan:</label>
+          <textarea
+            id="ulasan"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              height: 100px;
+              border-radius: 8px;
+              border: 1px solid #cccccc;
+            "
+          ></textarea>
+
+          <button
+            type="submit"
+            style="
+              width: 100%;
+              padding: 12px;
+              margin-top: 10px;
+              background: #27ae60;
+              color: rgb(243, 245, 244);
+              border: 0;
+              border-radius: 8px;
+              font-size: 16px;
+              cursor: pointer;
+            "
+          >
+            Kirim Ulasan
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!--Ulasan Start-->
+
+    <div id="scroll-review" class="scroll-row"></div>
+
+    <!--Ulasan end-->
+    <!--Contact section end-->
+
+    <!--Footer start-->
+    <footer>
+      <div class="socials">
+        <a href="https://instagram.com/bracukana"
+          ><i data-feather="instagram"></i
+        ></a>
+        <a href="#"><i data-feather="twitter"></i></a>
+        <a href="https://facebook.com/PAN NANA"
+          ><i data-feather="facebook"></i
+        ></a>
+      </div>
+      <div class="column">
+        <h3>Kontak</h3>
+        <h3>Jam Buka</h3>
+        <p>Telepon: <a href="tel:08123456789">0812-3456-789</a></p>
+        <div class="column"></div>
+        <p>Telepon: <a href="tel:08123456789">0812-3456-789</a></p>
+        <p>SETIAP HARI</p>
+        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+      </div>
+      <div class="credit">
+        <p>Created by <a href="#home">@andikabalitour</a>. | &copy; 2025.</p>
+      </div>
+    </footer>
+    <!--Footer end-->
+
+    <!--feather icons-->
+    <script>
+      feather.replace();
+    </script>
+    <!-- My Javascript -->
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "id",
+            includedLanguages: "id,en,fr,de,ja,ar,hi,zh-CN,ko,es,ru,th,ms",
+            layout: google.translate.TranslateElement.InlineLayout.VERTIKAL,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+      function toggleLangFloat() {
+        const box = document.getElementById("langFloat");
+        box.style.display = box.style.display === "flex" ? "none" : "flex";
+      }
+
+      function doTranslate(lang) {
+        const select = document.querySelector("select.goog-te-combo");
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event("change"));
+        }
+        document.getElementById("langFloat").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
