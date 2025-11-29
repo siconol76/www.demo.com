@@ -271,6 +271,9 @@ body {
   padding: 10rem 7% 0;
   text-align: center;
   color: #010101;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 .about h3,
 .about .cta {
@@ -297,26 +300,26 @@ body {
 }
 
 .slide {
-  position: relative;
-  min-width: 85%; /* responsif HP */
-  height: 450px;
-  scroll-snap-align: center;
+  background: #fff; /* background putih */
+  padding: 10px; /* beri ruang biar rapi */
   border-radius: 16px;
-  overflow: hidden;
-  background: #fff;
   display: flex;
   flex-direction: column;
+  align-items: center; /* gambar & teks di tengah */
+  justify-content: flex-start;
 }
 
 .slide img {
-  width: 180%;
-  height: 330px;
-  object-fit: cover;
+  width: 90% !important; /* lebih kecil dan proporsional */
+  height: auto !important;
+  border-radius: 12px;
+  display: flex;
 }
 
 .slide-content {
-  padding: 12px;
+  width: 100%;
   text-align: center;
+  padding: 15px 10px;
 }
 
 .slide-content h2 {
@@ -464,8 +467,20 @@ tr:hover {
 .menu .row .menu-card .menu-card-title {
   margin: 1rem auto 0.5rem;
 }
+
+/* Rental */
+
 .rental h3 {
-  color: #fff;
+  text-align: left !important;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.rental li {
+  text-align: left !important;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
 }
 
 /* ulasan */
