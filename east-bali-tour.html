@@ -1,138 +1,648 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paket Lempuyang - Andika Bali Tour</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f6f6f6;
-      }
-      header {
-        background: #000;
-        padding: 20px;
-        text-align: center;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-      }
-      .content {
-        max-width: 900px;
-        margin: 30px auto;
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-      .content img {
-        width: 20%;
-        border-radius: 12px;
-        margin-bottom: 20px;
-      }
-      .content p {
-        line-height: 1.8; /* Jarak antar baris lebih nyaman */
-        font-size: 16px; /* Ukuran huruf stabil */
-        color: #333; /* Warna teks hitam lembut (tidak terlalu gelap) */
-        text-align: justify; /* Paragraf rata kiri–kanan (rapi) */
-        margin-bottom: 15px; /* Beri jarak bawah antar paragraf */
-        letter-spacing: 0.3px; /* Spasi huruf sedikit elegan */
-      }
-      .price-box {
-        background: #ffe0b2;
-        padding: 15px;
-        border-radius: 10px;
-        margin-top: 15px;
-        font-size: 18px;
-        font-weight: bold;
-      }
-      a.back {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 12px 20px;
-        background: #000;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-      }
-    </style>
+    <title>EAST BALI TOUR</title>
+
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Momo+Trust+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--feather icons-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!--my style-->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f6f6;
+    }
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .content {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .content img {
+      width: 80%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    .content p {
+      line-height: 1.8; /* Jarak antar baris lebih nyaman */
+      font-size: 16px; /* Ukuran huruf stabil */
+      color: #333; /* Warna teks hitam lembut (tidak terlalu gelap) */
+      text-align: justify; /* Paragraf rata kiri–kanan (rapi) */
+      margin-bottom: 15px; /* Beri jarak bawah antar paragraf */
+      letter-spacing: 0.3px; /* Spasi huruf sedikit elegan */
+    }
+    .content li {
+      text-align: left;
+      color: #000;
+      font-size: 1.3rem;
+      line-height: 1.8;
+    }
+    .content h2 {
+      text-align: center;
+      line-height: 1.8;
+    }
+    .price-box {
+      background: #ffe0b2;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 20px;
+      background: #000;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      text-align: right;
+    }
+  </style>
   <body>
-    <header>Paket Pura Lempuyang</header>
+    <!--navbar start-->
+    <nav class="navbar">
+      <img src="./img/logo.png" alt="Logokiri" class="logo" />
 
-    <div class="content">
-      <img src="../andika-bali-tour/img/lempuyang.jpg" alt="Pura Lempuyang" />
-      <h2>Gate of Heaven – Pura Lempuyang</h2>
-      <p>
-        salah satu obyek wisata di Bali, dan juga merupakan tempat suci bagi
-        umat Hindu, pura berlokasi di wilayah bagian Timur pulau dewata tepatnya
-        di Kabupaten Karangasem. Dengan latar belakang panorama Gunung Agung
-        yang memukau, disamping sebagai tempat suci, Pura Sad Kahyangan
-        Lempuyang Luhur memiliki keunikan tersendiri seperti kemurnian alamnya,
-        terutama kawasan hutan cocok menjadi paru-paru Pulau Dewata. Wisatawan
-        yang gemar trekking, melakukan perjalanan ke Pura Luhur ini akan
-        memberikan sensasi dan pengalaman indah, unik serta menantang ada
-        beberapa jalur pendakian menuju puncak, jika mau lebih gampang, sudah
-        disediakan di jalur utama dengan tangga berundak, biasa juga digunakan
-        oleh umat Hindu sebagai jalur persembahyangan. Awal perjalanan dimulai
-        dengan kelokan disertai tanjakan, tempat yang pertama dapat kita
-        kunjungi adalah Pura Lempuyang Madya termasuk Pura Dang Kahyangan. Soal
-        status yang kasungsung (di puja) oleh umat Hindu di pura tersebut
-        diyakinkan adalah Ida Batara Empu Agenijaya dan Empu Manik Geni. Di
-        mana, Empu Agenijaya bersaudara tujuh, di antaranya Mpu Kuturan, Mpu
-        Baradah serta Mpu Semeru. Sementara palinggih yang ada di antaranya
-        palinggih bebaturan linggih Batara Empu Agenijaya sareng Empu Manikgeni,
-        Gedong Tumpang Siki (satu), dua dan tiga, Manjangan Saluang, Sanggar
-        Agung, Bale Pawedaan, serta Bale Pesandekan. Bagi wisatawan yang ingin
-        melihat keindahan dari Puncak Gunung Lempuyang / Bukit Bisbis menuju
-        Pura utama Sad Kahyangan Lempuyang Luhur di puncak kita harus menapaki
-        lebih dari 1.700 (seribu tujuh ratus) anak tangga, pada saat menapaki
-        jalan ke puncak inilah kita di suguhi udara sejuk dari hutan yang masih
-        asri, suara-suara satwa dan pemandangan alam Kabupaten Karangasem yang
-        memukau, yang lebih unik. Perlu usaha extra untuk menuju puncak,
-        rimbuhan belukar bertebaran diantara pohon-pohon tropis, kicauan burung
-        di alam bebas, dan kera-kera liar yang tampak bergelantungan adalah
-        hiburan saat perjalanan. Bagi umat Hindu maupun Para wisatawan yang
-        hendak Tangkil (datang sembahyang) ke Pura Sad Kahyangan Lempuyang
-        Luhur, satu hal yang layak dipersiapkan adalah ketahanan fisik, dan
-        tentu saja hati yang tulus suci, dan pantangan-pantangan yang patut di
-        patuhi yaitu tak boleh berkata kasar saat perjalanan, orang cuntaka
-        (seperti ada keluarga yang meninggal), wanita haid, menyusuai, anak yang
-        belum tanggal gigi susu sebaiknya jangan dulu masuk pura atau
-        bersembahyang ke pura setempat, membawa atau makan daging babi juga
-        tidak diperbolehkan.
-      </p>
-      <p>
-        Nikmati pengalaman luar biasa mengunjungi Pura Lempuyang yang terkenal
-        dengan
-        <b>Gate of Heaven</b>. Paket wisata ini mencakup lokasi-lokasi terbaik
-        di Bali Timur.
-      </p>
-
-      <h3>Destinasi yang Dikunjungi:</h3>
-      <ul>
-        <li>Pura Lempuyang (Gate of Heaven)</li>
-        <li>Tirta Gangga Water Palace</li>
-        <li>Virgin Beach</li>
-      </ul>
-
-      <div class="price-box">
-        Harga: Rp 450.000 – Rp 650.000 (tergantung jumlah peserta)
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Paket Tour</a>
+        <a href="#menu">Kegiatan Lain</a>
+        <a href="#rental">Car Rental</a>
+        <a href="#contact">Kontak</a>
       </div>
 
-      <h3>Termasuk:</h3>
-      <ul>
-        <li>Driver + BBM</li>
-        <li>Hotel pick up & drop off</li>
-        <li>Mobil AC</li>
-        <li>Biaya Parkir</li>
-        <li>Air Mineral</li>
-        <li>English Speaking driver</li>
-      </ul>
+      <div class="navbar-extra">
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+      <div id="google_translate_element" class="mini-translate"></div>
+    </nav>
+    <!--navbar end-->
 
-      <a href="index.html" class="back">⬅ Kembali ke Beranda</a>
+    <!--Herro section start-->
+
+    <a href="https://wa.me/6285886022912" class="wa-icon" target="_blank">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+      />
+    </a>
+
+    <!--Herro section end-->
+
+    <!-- Floating Translate Button -->
+    <div class="translate-float" onclick="toggleLangFloat()">🌍</div>
+
+    <div class="translate-options" id="langFloat">
+      <span onclick="doTranslate('en')">🇺🇸 English</span>
+      <span onclick="doTranslate('id')">🇮🇩 Indonesian</span>
+      <span onclick="doTranslate('hi')">🇮🇳 Hindi</span>
+      <span onclick="doTranslate('ja')">🇯🇵 Japanese</span>
+      <span onclick="doTranslate('jw')">🇮🇩 Javanese</span>
+      <span onclick="doTranslate('af')">🇿🇦 Afrikaans</span>
+      <span onclick="doTranslate('sq')">🇦🇱 Albanian</span>
+      <span onclick="doTranslate('am')">🇪🇹 Amharic</span>
+      <span onclick="doTranslate('ar')">🇸🇦 Arabic</span>
+      <span onclick="doTranslate('hy')">🇦🇲 Armenian</span>
+      <span onclick="doTranslate('az')">🇦🇿 Azerbaijani</span>
+      <span onclick="doTranslate('eu')">🇪🇸 Basque</span>
+      <span onclick="doTranslate('be')">🇧🇾 Belarusian</span>
+      <span onclick="doTranslate('bn')">🇧🇩 Bengali</span>
+      <span onclick="doTranslate('bs')">🇧🇦 Bosnian</span>
+      <span onclick="doTranslate('bg')">🇧🇬 Bulgarian</span>
+      <span onclick="doTranslate('ca')">🇪🇸 Catalan</span>
+      <span onclick="doTranslate('ceb')">🇵🇭 Cebuano</span>
+      <span onclick="doTranslate('zh-CN')">🇨🇳 Chinese (Simplified)</span>
+      <span onclick="doTranslate('zh-TW')">🇹🇼 Chinese (Traditional)</span>
+      <span onclick="doTranslate('co')">🇫🇷 Corsican</span>
+      <span onclick="doTranslate('hr')">🇭🇷 Croatian</span>
+      <span onclick="doTranslate('cs')">🇨🇿 Czech</span>
+      <span onclick="doTranslate('da')">🇩🇰 Danish</span>
+      <span onclick="doTranslate('nl')">🇳🇱 Dutch</span>
+      <span onclick="doTranslate('eo')">🌍 Esperanto</span>
+      <span onclick="doTranslate('et')">🇪🇪 Estonian</span>
+      <span onclick="doTranslate('fi')">🇫🇮 Finnish</span>
+      <span onclick="doTranslate('fr')">🇫🇷 French</span>
+      <span onclick="doTranslate('fy')">🇳🇱 Frisian</span>
+      <span onclick="doTranslate('gl')">🇪🇸 Galician</span>
+      <span onclick="doTranslate('ka')">🇬🇪 Georgian</span>
+      <span onclick="doTranslate('de')">🇩🇪 German</span>
+      <span onclick="doTranslate('el')">🇬🇷 Greek</span>
+      <span onclick="doTranslate('gu')">🇮🇳 Gujarati</span>
+      <span onclick="doTranslate('ht')">🇭🇹 Haitian Creole</span>
+      <span onclick="doTranslate('ha')">🇳🇬 Hausa</span>
+      <span onclick="doTranslate('haw')">🇺🇸 Hawaiian</span>
+      <span onclick="doTranslate('iw')">🇮🇱 Hebrew</span>
+      <span onclick="doTranslate('hmn')">🇨🇳 Hmong</span>
+      <span onclick="doTranslate('hu')">🇭🇺 Hungarian</span>
+      <span onclick="doTranslate('is')">🇮🇸 Icelandic</span>
+      <span onclick="doTranslate('ig')">🇳🇬 Igbo</span>
+      <span onclick="doTranslate('ga')">🇮🇪 Irish</span>
+      <span onclick="doTranslate('it')">🇮🇹 Italian</span>
+      <span onclick="doTranslate('kn')">🇮🇳 Kannada</span>
+      <span onclick="doTranslate('kk')">🇰🇿 Kazakh</span>
+      <span onclick="doTranslate('km')">🇰🇭 Khmer</span>
+      <span onclick="doTranslate('rw')">🇷🇼 Kinyarwanda</span>
+      <span onclick="doTranslate('ko')">🇰🇷 Korean</span>
+      <span onclick="doTranslate('ku')">🇮🇶 Kurdish</span>
+      <span onclick="doTranslate('ky')">🇰🇬 Kyrgyz</span>
+      <span onclick="doTranslate('lo')">🇱🇦 Lao</span>
+      <span onclick="doTranslate('la')">🏛 Latin</span>
+      <span onclick="doTranslate('lv')">🇱🇻 Latvian</span>
+      <span onclick="doTranslate('lt')">🇱🇹 Lithuanian</span>
+      <span onclick="doTranslate('lb')">🇱🇺 Luxembourgish</span>
+      <span onclick="doTranslate('mk')">🇲🇰 Macedonian</span>
+      <span onclick="doTranslate('mg')">🇲🇬 Malagasy</span>
+      <span onclick="doTranslate('ms')">🇲🇾 Malay</span>
+      <span onclick="doTranslate('ml')">🇮🇳 Malayalam</span>
+      <span onclick="doTranslate('mt')">🇲🇹 Maltese</span>
+      <span onclick="doTranslate('mi')">🇳🇿 Maori</span>
+      <span onclick="doTranslate('mr')">🇮🇳 Marathi</span>
+      <span onclick="doTranslate('mn')">🇲🇳 Mongolian</span>
+      <span onclick="doTranslate('my')">🇲🇲 Myanmar (Burmese)</span>
+      <span onclick="doTranslate('ne')">🇳🇵 Nepali</span>
+      <span onclick="doTranslate('no')">🇳🇴 Norwegian</span>
+      <span onclick="doTranslate('ny')">🇲🇼 Nyanja</span>
+      <span onclick="doTranslate('or')">🇮🇳 Odia</span>
+      <span onclick="doTranslate('ps')">🇦🇫 Pashto</span>
+      <span onclick="doTranslate('fa')">🇮🇷 Persian</span>
+      <span onclick="doTranslate('pl')">🇵🇱 Polish</span>
+      <span onclick="doTranslate('pt')">🇵🇹 Portuguese</span>
+      <span onclick="doTranslate('pa')">🇮🇳 Punjabi</span>
+      <span onclick="doTranslate('ro')">🇷🇴 Romanian</span>
+      <span onclick="doTranslate('ru')">🇷🇺 Russian</span>
+      <span onclick="doTranslate('sm')">🇼🇸 Samoan</span>
+      <span onclick="doTranslate('gd')">🏴 Scottish Gaelic</span>
+      <span onclick="doTranslate('sr')">🇷🇸 Serbian</span>
+      <span onclick="doTranslate('st')">🇱🇸 Sesotho</span>
+      <span onclick="doTranslate('sn')">🇿🇼 Shona</span>
+      <span onclick="doTranslate('sd')">🇵🇰 Sindhi</span>
+      <span onclick="doTranslate('si')">🇱🇰 Sinhala</span>
+      <span onclick="doTranslate('sk')">🇸🇰 Slovak</span>
+      <span onclick="doTranslate('sl')">🇸🇮 Slovenian</span>
+      <span onclick="doTranslate('so')">🇸🇴 Somali</span>
+      <span onclick="doTranslate('es')">🇪🇸 Spanish</span>
+      <span onclick="doTranslate('su')">🇮🇩 Sundanese</span>
+      <span onclick="doTranslate('sw')">🇰🇪 Swahili</span>
+      <span onclick="doTranslate('sv')">🇸🇪 Swedish</span>
+      <span onclick="doTranslate('tl')">🇵🇭 Tagalog</span>
+      <span onclick="doTranslate('tg')">🇹🇯 Tajik</span>
+      <span onclick="doTranslate('ta')">🇮🇳 Tamil</span>
+      <span onclick="doTranslate('tt')">🇷🇺 Tatar</span>
+      <span onclick="doTranslate('te')">🇮🇳 Telugu</span>
+      <span onclick="doTranslate('th')">🇹🇭 Thai</span>
+      <span onclick="doTranslate('tr')">🇹🇷 Turkish</span>
+      <span onclick="doTranslate('tk')">🇹🇲 Turkmen</span>
+      <span onclick="doTranslate('uk')">🇺🇦 Ukrainian</span>
+      <span onclick="doTranslate('ur')">🇵🇰 Urdu</span>
+      <span onclick="doTranslate('ug')">🇨🇳 Uyghur</span>
+      <span onclick="doTranslate('uz')">🇺🇿 Uzbek</span>
+      <span onclick="doTranslate('vi')">🇻🇳 Vietnamese</span>
+      <span onclick="doTranslate('cy')">🏴 Welsh</span>
+      <span onclick="doTranslate('xh')">🇿🇦 Xhosa</span>
+      <span onclick="doTranslate('yi')">🇮🇱 Yiddish</span>
+      <span onclick="doTranslate('yo')">🇳🇬 Yoruba</span>
+      <span onclick="doTranslate('zu')">🇿🇦 Zulu</span>
     </div>
+    <!-- Floating Translate Button end -->
+
+    <!--About section Start-->
+
+    <section id="about" class="about">
+      <h2>EAST BALI TOUR</h2>
+
+      <div class="content">
+        <img src="./img/lempuyang-tirtagangga.png" alt="Pura Lempuyang" />
+        <h2>PURA LEMPUYANG</h2>
+        <p>
+          Pura Lempuyang adalah salah satu pura tertua dan paling suci di Bali,
+          terletak di Kabupaten Karangasem. Pura ini terkenal dengan gerbang
+          ikoniknya yang disebut <b>Gate of Heaven</b>, yang membingkai
+          pemandangan Gunung Agung secara dramatis.
+        </p>
+        <p>Ciri khasnya:</p>
+        <ul>
+          <li>
+            Berada di ketinggian bukit sehingga memberikan panorama awan dan
+            matahari terbit yang sangat indah.
+          </li>
+          <li>
+            Merupakan bagian dari <b>Sad Kahyangan</b>, enam pura utama penjaga
+            keseimbangan Bali.
+          </li>
+          <li>
+            Untuk mencapai pura utama, pengunjung biasanya harus menaiki banyak
+            anak tangga, namun area gerbang di bawahnya sudah sangat populer
+            sebagai spot foto.
+          </li>
+        </ul>
+        <h2>TIRTA GANGGA WATER PALACE</h2>
+        <p>
+          Tirta Gangga adalah taman air bersejarah di Karangasem, Bali, yang
+          dibangun oleh Raja Karangasem pada tahun 1946. Tempat ini terkenal
+          dengan kolam jernih berisi ikan koi, air mancur bertingkat, dan
+          deretan patung Hindu yang indah.
+        </p>
+        <p>Ciri khasnya:</p>
+        <ul>
+          <li>
+            Kolam besar dengan <b>batu pijakan</b> untuk berjalan di atas air.
+          </li>
+          <li>
+            Suasana asri dikelilingi taman, pepohonan, dan arsitektur khas Bali.
+          </li>
+          <li>
+            Sumber air suci yang digunakan untuk upacara keagamaan masyarakat
+            setempat.
+          </li>
+        </ul>
+
+        <p>
+          -----------------------------------------------------------------------------------------------------------------------------------------
+        </p>
+        <p><b>Option:</b></p>
+        <p></p>
+        <ul>
+          <li>Taman Ujung</li>
+          <li>virgin Beach</li>
+          <li>Snorkling Blue Lagoon</li>
+        </ul>
+
+        <div class="price-box">
+          Harga: Rp 450.000 – Rp 650.000 (tergantung jumlah peserta)
+        </div>
+        <p></p>
+
+        <p><b>Termasuk:</b></p>
+        <ul>
+          <li>Driver + BBM</li>
+          <li>Hotel pick up & drop off</li>
+          <li>Mobil AC</li>
+          <li>Biaya Parkir</li>
+          <li>Air Mineral</li>
+          <li>English Speaking driver</li>
+        </ul>
+
+        <a href="index.html" class="back">⬅ Kembali ke Beranda</a>
+        <a href="mailto:agusoki76@gmail.com.com" class="back">📧 Email</a>
+        <a href="tel:08123456789" class="back">📞 Telepon</a>
+        <a href="https://wa.me/6285886022912" class="back">💬 WhatsApp</a>
+      </div>
+    </section>
+
+    <!--About section end-->
+
+    <!--Menu section Start-->
+
+    <section id="menu" class="menu">
+      <h2><span>Kegiatan yang</span> Menyenangkan</h2>
+      <div class="scroll-wrapper">
+        <!-- Tombol Scroll Kiri -->
+        <button class="scroll-btn left" onclick="scrollLeft()">❮</button>
+
+        <div class="scroll-x">
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=1" />
+            <div class="slide-content">
+              <h2>Paket Lempuyang</h2>
+              <p>
+                Kunjungi pura tertinggi di Bali dengan pemandangan Gunung Agung.
+              </p>
+              <a href="paket-lempuyang.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=1" />
+            <div class="slide-content">
+              <h2>Adventure Tour</h2>
+              <p>
+                Kunjungi pura tertinggi di Bali dengan pemandangan Gunung Agung.
+              </p>
+              <a href="adventure-tour.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=2" />
+            <div class="slide-content">
+              <h2>Paket Ubud Full Day</h2>
+              <p>Wisata budaya, sawah terasering, dan aktivitas seru.</p>
+              <a href="paket-lempuyang.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=2" />
+            <div class="slide-content">
+              <h2>Paket Ubud Full Day</h2>
+              <p>Wisata budaya, sawah terasering, dan aktivitas seru.</p>
+              <a href="paket-lempuyang.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=2" />
+            <div class="slide-content">
+              <h2>Paket Ubud Full Day</h2>
+              <p>Wisata budaya, sawah terasering, dan aktivitas seru.</p>
+              <a href="paket-lempuyang.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=2" />
+            <div class="slide-content">
+              <h2>Paket Ubud Full Day</h2>
+              <p>Wisata budaya, sawah terasering, dan aktivitas seru.</p>
+              <a href="paket-lempuyang.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=2" />
+            <div class="slide-content">
+              <h2>Paket Ubud Full Day</h2>
+              <p>Wisata budaya, sawah terasering, dan aktivitas seru.</p>
+              <a href="paket-lempuyang.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=2" />
+            <div class="slide-content">
+              <h2>Paket Ubud Full Day</h2>
+              <p>Wisata budaya, sawah terasering, dan aktivitas seru.</p>
+              <a href="paket-lempuyang.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=2" />
+            <div class="slide-content">
+              <h2>Paket Ubud Full Day</h2>
+              <p>Wisata budaya, sawah terasering, dan aktivitas seru.</p>
+              <a href="paket-lempuyang.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/600/400?random=2" />
+            <div class="slide-content">
+              <h2>Paket Ubud Full Day</h2>
+              <p>Wisata budaya, sawah terasering, dan aktivitas seru.</p>
+              <a href="paket-lempuyang.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Scroll Kanan -->
+        <button class="scroll-btn right" onclick="scrollRight()">❯</button>
+      </div>
+    </section>
+    <!--Menu section end-->
+
+    <!--Rental section start-->
+    <section id="rental" class="rental">
+      <h2><span>Paket</span> Rental</h2>
+
+      <div class="scroll-wrapper">
+        <!-- Tombol Scroll Kiri -->
+        <button class="scroll-btn left" onclick="scrollLeft()">❮</button>
+
+        <div class="scroll-x">
+          <div class="slide">
+            <img src="./img/avansa.png" />
+            <div class="slide-content">
+              <h2>Toyota Avanza</h2>
+              <p>Rp 700.000</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="./img/xenia.png" />
+            <div class="slide-content">
+              <h2>Daihatsu xenia</h2>
+              <p>Rp 700.000</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="./img/haiace.png" />
+            <div class="slide-content">
+              <h2>Toyota Haiace</h2>
+              <p>Rp 1.600.000</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="./img/innova.png" />
+            <div class="slide-content">
+              <h2>Toyota innova</h2>
+              <p>1.000.000</p>
+            </div>
+          </div>
+        </div>
+        <h3>INCLUDE</h3>
+        <ul>
+          <li>Driver + BBM</li>
+          <li>Hotel pick up & drop off</li>
+          <li>Mobil AC</li>
+          <li>Biaya Parkir</li>
+          <li>Air Mineral</li>
+          <li>English Speaking driver</li>
+        </ul>
+        <!-- Tombol Scroll Kanan -->
+        <button class="scroll-btn right" onclick="scrollRight()">❯</button>
+      </div>
+    </section>
+    <!--Rental section start-->
+
+    <!--Contact section start-->
+
+    <section id="contact" class="contact">
+      <h2><span>Kontak</span> Kami</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, tempore.
+      </p>
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.050504942167!2d115.2656227732114!3d-8.63361618776913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23f581fea6f67%3A0x42296e4a10829031!2sAndika%20Bali%20Tour!5e1!3m2!1sid!2sid!4v1763776187784!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+        <form
+          id="reviewForm"
+          style="
+            max-width: 500px;
+            margin: auto;
+            color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+          "
+        >
+          <h3 style="text-align: center; margin-bottom: 15px">
+            Beri Ulasan Anda
+          </h3>
+
+          <label>Nama:</label>
+          <input
+            type="text"
+            id="nama"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              margin-bottom: 10px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+            "
+          />
+
+          <label>Rating:</label>
+          <select
+            id="rating"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              margin-bottom: 10px;
+              border-radius: 8px;
+              border: 1px solid #ccc;
+            "
+          >
+            <option value="5">★★★★★ (5)</option>
+            <option value="4">★★★★☆ (4)</option>
+            <option value="3">★★★☆☆ (3)</option>
+            <option value="2">★★☆☆☆ (2)</option>
+            <option value="1">★☆☆☆☆ (1)</option>
+          </select>
+
+          <label>Ulasan:</label>
+          <textarea
+            id="ulasan"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              height: 100px;
+              border-radius: 8px;
+              border: 1px solid #cccccc;
+            "
+          ></textarea>
+
+          <button
+            type="submit"
+            style="
+              width: 100%;
+              padding: 12px;
+              margin-top: 10px;
+              background: #27ae60;
+              color: rgb(243, 245, 244);
+              border: 0;
+              border-radius: 8px;
+              font-size: 16px;
+              cursor: pointer;
+            "
+          >
+            Kirim Ulasan
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!--Ulasan Start-->
+
+    <div id="scroll-review" class="scroll-row"></div>
+
+    <!--Ulasan end-->
+    <!--Contact section end-->
+
+    <!--Footer start-->
+    <footer>
+      <div class="socials">
+        <a href="https://instagram.com/bracukana"
+          ><i data-feather="instagram"></i
+        ></a>
+        <a href="#"><i data-feather="twitter"></i></a>
+        <a href="https://facebook.com/PAN NANA"
+          ><i data-feather="facebook"></i
+        ></a>
+      </div>
+      <div class="column">
+        <h3>Kontak</h3>
+        <h3>Jam Buka</h3>
+        <p>Telepon: <a href="tel:08123456789">0812-3456-789</a></p>
+        <div class="column"></div>
+        <p>Telepon: <a href="tel:08123456789">0812-3456-789</a></p>
+        <p>SETIAP HARI</p>
+        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+      </div>
+      <div class="credit">
+        <p>Created by <a href="#home">@andikabalitour</a>. | &copy; 2025.</p>
+      </div>
+    </footer>
+    <!--Footer end-->
+
+    <!--feather icons-->
+    <script>
+      feather.replace();
+    </script>
+    <!-- My Javascript -->
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "id",
+            includedLanguages: "id,en,fr,de,ja,ar,hi,zh-CN,ko,es,ru,th,ms",
+            layout: google.translate.TranslateElement.InlineLayout.VERTIKAL,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+      function toggleLangFloat() {
+        const box = document.getElementById("langFloat");
+        box.style.display = box.style.display === "flex" ? "none" : "flex";
+      }
+
+      function doTranslate(lang) {
+        const select = document.querySelector("select.goog-te-combo");
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event("change"));
+        }
+        document.getElementById("langFloat").style.display = "none";
+      }
+    </script>
   </body>
 </html>
