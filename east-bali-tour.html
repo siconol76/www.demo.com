@@ -92,8 +92,6 @@
     }
     .music-btn {
       position: fixed;
-      top: 20px;
-      right: 20px;
       background: #b85c5c;
       color: white;
       padding: 10px 16px;
@@ -101,6 +99,14 @@
       cursor: pointer;
       z-index: 3000;
       font-weight: 600;
+      animation: float 3s infinite ease-in-out;
+      transform: scale(1.12);
+      bottom: 170px; /* posisi dari bawah */
+      right: 26px; /* posisi dari kanan */
+    }
+    .translate-float {
+      animation: float 3s infinite ease-in-out;
+      transform: scale(1.12);
     }
   </style>
   <body>
@@ -119,7 +125,7 @@
       <div class="navbar-extra">
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
-      <button class="music-btn" onclick="toggleMusic()">♫ Musik</button>
+      <button class="music-btn" onclick="toggleMusic()">♫</button>
       <audio
         id="bgm"
         loop
@@ -400,6 +406,12 @@
         document.getElementById("langFloat").style.display = "none";
       }
       // Music toggle
+      function startMusic() {
+        const music = document.getElementById("bgm");
+        music.play();
+        localStorage.setItem("musicAllowed", "yes");
+        document.getElementById("btn-detail").style.display = "none";
+      }
       function toggleMusic() {
         const m = document.getElementById("bgm");
         if (m.paused) {
