@@ -726,7 +726,7 @@ footer .credit a {
 /* Mobile Phone */
 @media (max-width: 500px) {
   .about .slide {
-    width: 100%; /* atur besar kecilnya */
+    width: 150%; /* atur besar kecilnya */
     margin: 0 auto; /* agar center */
     display: block;
     html {
@@ -735,6 +735,13 @@ footer .credit a {
   }
   .about p {
     font-size: 1.2rem;
+    word-wrap: break-word; /* pecah kata panjang */
+    white-space: normal; /* turunkan teks */
+  }
+  .about h2 {
+    font-size: 1.5rem;
+    word-wrap: break-word; /* pecah kata panjang */
+    white-space: normal; /* turunkan teks */
   }
 }
 @keyframes bgMove {
