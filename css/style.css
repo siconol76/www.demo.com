@@ -182,7 +182,7 @@ body {
   align-items: center;
   background-image: url("../img/ulundanu.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   position: relative;
   background-attachment: fixed;
@@ -724,7 +724,7 @@ footer .credit a {
 }
 
 /* Mobile Phone */
-@media (max-width: 450px) {
+@media (max-width: 400px) {
   html {
     font-size: 55%;
   }
@@ -735,13 +735,6 @@ footer .credit a {
   }
   100% {
     background-position: center bottom;
-  }
-}
-/* Responsif HP */
-@media (max-width: 600px) {
-  .review-box {
-    height: 220px;
-    max-width: 90%;
   }
 }
 @keyframes float {
