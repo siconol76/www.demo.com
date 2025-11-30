@@ -90,6 +90,18 @@
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
       text-align: right;
     }
+    .music-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #b85c5c;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 3000;
+      font-weight: 600;
+    }
   </style>
   <body>
     <!--navbar start-->
@@ -107,6 +119,12 @@
       <div class="navbar-extra">
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
+      <button class="music-btn" onclick="toggleMusic()">♫ Musik</button>
+      <audio
+        id="bgm"
+        loop
+        src="./music/kichorus-naturebgm-binaural-sound01-21183.mp3"
+      ></audio>
       <div id="google_translate_element" class="mini-translate"></div>
     </nav>
     <!--navbar end-->
@@ -289,9 +307,7 @@
           </li>
         </ul>
 
-        <p>
-          -----------------------------------------------------------------------------------------------------------------------------------------
-        </p>
+        <img src="./img/virgin.png" alt="Pura Lempuyang" />
         <p><b>Option:</b></p>
         <p></p>
         <ul>
@@ -382,6 +398,15 @@
           select.dispatchEvent(new Event("change"));
         }
         document.getElementById("langFloat").style.display = "none";
+      }
+      // Music toggle
+      function toggleMusic() {
+        const m = document.getElementById("bgm");
+        if (m.paused) {
+          m.play();
+        } else {
+          m.pause();
+        }
       }
     </script>
   </body>
