@@ -733,6 +733,9 @@ footer .credit a {
       font-size: 55%;
     }
   }
+  .about p {
+    font-size: 1.2rem;
+  }
 }
 @keyframes bgMove {
   0% {
