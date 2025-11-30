@@ -724,9 +724,14 @@ footer .credit a {
 }
 
 /* Mobile Phone */
-@media (max-width: 400px) {
-  html {
-    font-size: 55%;
+@media (max-width: 500px) {
+  .about .slide {
+    width: 100%; /* atur besar kecilnya */
+    margin: 0 auto; /* agar center */
+    display: block;
+    html {
+      font-size: 55%;
+    }
   }
 }
 @keyframes bgMove {
