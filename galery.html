@@ -44,46 +44,57 @@
       animation: float 3s infinite ease-in-out;
       transform: scale(1.12);
     }
-    .bookingForm {
-      max-width: 420px;
-      margin: auto; /* agar form ke kanan */
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      margin-top: 10rem;
+    .gallery-v3 {
+      padding: 30px 20px;
+      margin-top: 7rem;
+    }
+    .gallery-v3 h2,
+    .gallery-v3 h3 {
+      color: rgb(81, 79, 79);
+    }
+    .gallery-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 25px;
     }
 
-    .bookingForm label {
-      display: block;
-      font-weight: bold;
-      margin-top: 10px;
-      margin-bottom: 5px;
+    .gallery-card {
+      background: white;
+      margin-bottom: 25px;
+      border-radius: 16px;
+      padding: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
     }
 
-    .bookingForm input,
-    .bookingForm select,
-    .bookingForm textarea {
-      width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      margin-bottom: 10px;
+    .place-name {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 700;
     }
 
-    .bookingForm button {
-      width: 100%;
-      padding: 12px;
-      background: #27ae60;
-      color: white;
-      border-radius: 10px;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
+    .gallery-slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      scroll-snap-type: x mandatory;
     }
 
-    .bookingForm button:hover {
-      background: #219150;
+    .gallery-slider::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .gallery-slider::-webkit-scrollbar-thumb {
+      background: #aaa;
+      border-radius: 8px;
+    }
+
+    .gallery-slider img {
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      scroll-snap-align: center;
     }
   </style>
   <body>
@@ -96,6 +107,7 @@
         <a href="index.html">Paket Tour</a>
         <a href="index.html">Kegiatan Lain</a>
         <a href="index.html">Car Rental</a>
+        <a href="galery.html">Galery</a>
         <a href="index.html">Kontak</a>
       </div>
 
@@ -241,56 +253,44 @@
 
     <!--About section Start-->
 
-    <form
-      target="_blank"
-      action="https://formsubmit.co/agusoki76@gmail.com"
-      method="POST"
-      id="bookingForm"
-      class="bookingForm"
-    >
-      <!-- Hidden setup -->
-      <input
-        type="hidden"
-        name="_subject"
-        value="Booking Baru dari Website Andika Bali Tour"
-      />
-      <input type="hidden" name="_captcha" value="false" />
-      <input
-        type="hidden"
-        name="_next"
-        value="https://andikabalitour.com/thankyou.html"
-      />
+    <section class="gallery-v3">
+      <h2 class="gallery-title">Galeri Wisata</h2>
 
-      <label>Nama :</label>
-      <input type="text" name="Nama" required />
+      <div class="gallery-card">
+        <h3 class="place-name">Pantai Kelingking – Nusa Penida</h3>
+        <div class="gallery-slider">
+          <img src="img/kelingking1.jpg" alt="" />
+          <img src="img/kelingking2.jpg" alt="" />
+          <img src="img/kelingking3.jpg" alt="" />
+          <img src="img/kelingking3.jpg" alt="" />
+          <img src="img/kelingking3.jpg" alt="" />
+          <img src="img/kelingking3.jpg" alt="" />
+        </div>
+      </div>
 
-      <label>No WhatsApp :</label>
-      <input type="text" name="WhatsApp" required />
+      <div class="gallery-card">
+        <h3 class="place-name">Air Terjun Gitgit – Buleleng</h3>
+        <div class="gallery-slider">
+          <img src="img/gitgit1.jpg" alt="" />
+          <img src="img/gitgit2.jpg" alt="" />
+          <img src="img/gitgit3.jpg" alt="" />
+          <img src="img/gitgit3.jpg" alt="" />
+          <img src="img/gitgit3.jpg" alt="" />
+          <img src="img/gitgit3.jpg" alt="" />
+        </div>
+      </div>
 
-      <label>Tanggal Mulai :</label>
-      <input type="date" name="Tanggal_Mulai" required />
-
-      <label>Sampai Tanggal :</label>
-      <input type="date" name="Tanggal_Selesai" required />
-
-      <label>Jumlah Orang :</label>
-      <input type="number" name="Jumlah_Orang" required />
-
-      <label>Paket :</label>
-      <select name="Paket" required>
-        <option value="Lempuyang Gate of Heaven">
-          Lempuyang Gate of Heaven
-        </option>
-        <option value="Tour Ubud">Tour Ubud</option>
-        <option value="Nusa Penida Trip">Nusa Penida Trip</option>
-        <option value="Kintamani Volcano">Kintamani Volcano</option>
-      </select>
-
-      <label>Catatan :</label>
-      <textarea name="Catatan"></textarea>
-
-      <button type="submit">Kirim Booking</button>
-    </form>
+      <div class="gallery-card">
+        <h3 class="place-name">Pantai Lovina – Singaraja</h3>
+        <div class="gallery-slider">
+          <img src="img/lovina1.jpg" alt="" />
+          <img src="img/lovina2.jpg" alt="" />
+          <img src="img/lovina3.jpg" alt="" />
+          <img src="img/lovina3.jpg" alt="" />
+          <img src="img/lovina3.jpg" alt="" />
+        </div>
+      </div>
+    </section>
     <!--Footer start-->
     <footer>
       <div class="socials">
@@ -365,40 +365,13 @@
           m.pause();
         }
       }
-      document
-        .getElementById("bookingForm")
-        .addEventListener("submit", function (e) {
-          const nama = document.querySelector("input[name='Nama']").value;
-          const wa = document.querySelector("input[name='WhatsApp']").value;
-          const mulai = document.querySelector(
-            "input[name='Tanggal_Mulai']"
-          ).value;
-          const selesai = document.querySelector(
-            "input[name='Tanggal_Selesai']"
-          ).value;
-          const orang = document.querySelector(
-            "input[name='Jumlah_Orang']"
-          ).value;
-          const paket = document.querySelector("select[name='Paket']").value;
-          const catatan = document.querySelector(
-            "textarea[name='Catatan']"
-          ).value;
+      const sliders = document.querySelectorAll(".gallery-slider");
 
-          const pesan = `Booking Baru:
-Nama: ${nama}
-WA: ${wa}
-Tanggal: ${mulai} sampai ${selesai}
-Jumlah Orang: ${orang}
-Paket: ${paket}
-Catatan: ${catatan}`;
-
-          // Arahkan ke WhatsApp
-          setTimeout(() => {
-            window.open(
-              "https://wa.me/6285886022912?text=" + encodeURIComponent(pesan)
-            );
-          }, 500);
-        });
+      sliders.forEach((slider) => {
+        setInterval(() => {
+          slider.scrollBy({ left: 300, behavior: "smooth" });
+        }, 3000);
+      });
     </script>
   </body>
 </html>
