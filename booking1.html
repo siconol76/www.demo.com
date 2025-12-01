@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NORTH BALI TOUR</title>
+    <title>BOOKING</title>
 
     <!--font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,70 +26,6 @@
       padding: 0;
       background: #f6f6f6;
     }
-    header {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .content {
-      max-width: 1000px;
-      margin: 30px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .content img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    .content p {
-      line-height: 1.8; /* Jarak antar baris lebih nyaman */
-      font-size: 16px; /* Ukuran huruf stabil */
-      color: #333; /* Warna teks hitam lembut (tidak terlalu gelap) */
-      text-align: justify; /* Paragraf rata kiri–kanan (rapi) */
-      margin-bottom: 15px; /* Beri jarak bawah antar paragraf */
-      letter-spacing: 0.3px; /* Spasi huruf sedikit elegan */
-    }
-    .content li {
-      text-align: left;
-      color: #333; /* Warna teks hitam lembut (tidak terlalu gelap) */
-      font-size: 16px; /* Ukuran huruf stabil */
-      line-height: 1.8;
-      text-align: justify;
-      letter-spacing: 0.3px; /* Spasi huruf sedikit elegan */
-      margin-bottom: 13px; /* Beri jarak bawah antar paragraf */
-    }
-    .content h2 {
-      text-align: center;
-      line-height: 1.8;
-      margin-top: 20px; /* Beri jarak bawah antar paragraf */
-    }
-    .price-box {
-      background: #ffe0b2;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 15px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    a.back {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 20px;
-      background: #000;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      display: inline-block;
-      text-decoration: none;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-      text-align: right;
-    }
     .music-btn {
       position: fixed;
       background: #b85c5c;
@@ -108,6 +44,47 @@
       animation: float 3s infinite ease-in-out;
       transform: scale(1.12);
     }
+    .bookingForm {
+      max-width: 420px;
+      margin: auto; /* agar form ke kanan */
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 10rem;
+    }
+
+    .bookingForm label {
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .bookingForm input,
+    .bookingForm select,
+    .bookingForm textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    .bookingForm button {
+      width: 100%;
+      padding: 12px;
+      background: #27ae60;
+      color: white;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .bookingForm button:hover {
+      background: #219150;
+    }
   </style>
   <body>
     <!--navbar start-->
@@ -115,18 +92,22 @@
       <img src="./img/logo.png" alt="Logokiri" class="logo" />
 
       <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">Paket Tour</a>
-        <a href="#menu">Kegiatan Lain</a>
-        <a href="#rental">Car Rental</a>
-        <a href="#contact">Kontak</a>
+        <a href="index.html">Home</a>
+        <a href="index.html">Paket Tour</a>
+        <a href="index.html">Kegiatan Lain</a>
+        <a href="index.html">Car Rental</a>
+        <a href="index.html">Kontak</a>
       </div>
 
       <div class="navbar-extra">
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
       <button class="music-btn" onclick="toggleMusic()">♫</button>
-      <audio id="bgm" loop src="./music/ADVENTURE.mp3"></audio>
+      <audio
+        id="bgm"
+        loop
+        src="./music/kichorus-naturebgm-binaural-sound01-21183.mp3"
+      ></audio>
       <div id="google_translate_element" class="mini-translate"></div>
     </nav>
     <!--navbar end-->
@@ -260,88 +241,56 @@
 
     <!--About section Start-->
 
-    <section id="about" class="about">
-      <h2>NORTH BALI TOUR</h2>
+    <form
+      target="_blank"
+      action="https://formsubmit.co/Igedeandikaputra02@gmail.com"
+      method="POST"
+      id="bookingForm"
+      class="bookingForm"
+    >
+      <!-- Hidden setup -->
+      <input
+        type="hidden"
+        name="_subject"
+        value="Booking Baru dari Website Andika Bali Tour"
+      />
+      <input type="hidden" name="_captcha" value="false" />
+      <input
+        type="hidden"
+        name="_next"
+        value="https://andikabalitour.com/thankyou.html"
+      />
 
-      <div class="content">
-        <img src="./img/lempuyang-tirtagangga.png" alt="Pura Lempuyang" />
-        <h2>PURA LEMPUYANG</h2>
-        <p>
-          Pura Lempuyang adalah salah satu pura tertua dan paling suci di Bali,
-          terletak di Kabupaten Karangasem. Pura ini terkenal dengan gerbang
-          ikoniknya yang disebut <b>Gate of Heaven</b>, yang membingkai
-          pemandangan Gunung Agung secara dramatis.
-        </p>
-        <p>Ciri khasnya:</p>
-        <ul>
-          <li>
-            Berada di ketinggian bukit sehingga memberikan panorama awan dan
-            matahari terbit yang sangat indah.
-          </li>
-          <li>
-            Merupakan bagian dari <b>Sad Kahyangan</b>, enam pura utama penjaga
-            keseimbangan Bali.
-          </li>
-          <li>
-            Untuk mencapai pura utama, pengunjung biasanya harus menaiki banyak
-            anak tangga, namun area gerbang di bawahnya sudah sangat populer
-            sebagai spot foto.
-          </li>
-        </ul>
-        <h2>TIRTA GANGGA WATER PALACE</h2>
-        <p>
-          Tirta Gangga adalah taman air bersejarah di Karangasem, Bali, yang
-          dibangun oleh Raja Karangasem pada tahun 1946. Tempat ini terkenal
-          dengan kolam jernih berisi ikan koi, air mancur bertingkat, dan
-          deretan patung Hindu yang indah.
-        </p>
-        <p>Ciri khasnya:</p>
-        <ul>
-          <li>
-            Kolam besar dengan <b>batu pijakan</b> untuk berjalan di atas air.
-          </li>
-          <li>
-            Suasana asri dikelilingi taman, pepohonan, dan arsitektur khas Bali.
-          </li>
-          <li>
-            Sumber air suci yang digunakan untuk upacara keagamaan masyarakat
-            setempat.
-          </li>
-        </ul>
+      <label>Nama :</label>
+      <input type="text" name="Nama" required />
 
-        <img src="./img/virgin.png" alt="Pura Lempuyang" />
-        <p><b>Option:</b></p>
-        <p></p>
-        <ul>
-          <li>Taman Ujung</li>
-          <li>virgin Beach</li>
-          <li>Snorkling Blue Lagoon</li>
-        </ul>
+      <label>No WhatsApp :</label>
+      <input type="text" name="WhatsApp" required />
 
-        <div class="price-box">
-          Harga: Rp 450.000 – Rp 650.000 (tergantung jumlah peserta)
-        </div>
-        <p></p>
+      <label>Tanggal Mulai :</label>
+      <input type="date" name="Tanggal_Mulai" required />
 
-        <p><b>Termasuk:</b></p>
-        <ul>
-          <li>Driver + BBM</li>
-          <li>Hotel pick up & drop off</li>
-          <li>Mobil AC</li>
-          <li>Biaya Parkir</li>
-          <li>Air Mineral</li>
-          <li>English Speaking driver</li>
-        </ul>
+      <label>Sampai Tanggal :</label>
+      <input type="date" name="Tanggal_Selesai" required />
 
-        <a href="index.html" class="back">⬅ Kembali ke Beranda</a>
-        <a href="booking1.html" class="back">📧 Email</a>
-        <a href="tel:08123456789" class="back">📞 Telepon</a>
-        <a href="https://wa.me/6285886022912" class="back">💬 WhatsApp</a>
-      </div>
-    </section>
+      <label>Jumlah Orang :</label>
+      <input type="number" name="Jumlah_Orang" required />
 
-    <!--About section end-->
+      <label>Paket :</label>
+      <select name="Paket" required>
+        <option value="Lempuyang Gate of Heaven">
+          Lempuyang Gate of Heaven
+        </option>
+        <option value="Tour Ubud">Tour Ubud</option>
+        <option value="Nusa Penida Trip">Nusa Penida Trip</option>
+        <option value="Kintamani Volcano">Kintamani Volcano</option>
+      </select>
 
+      <label>Catatan :</label>
+      <textarea name="Catatan"></textarea>
+
+      <button type="submit">Kirim Booking</button>
+    </form>
     <!--Footer start-->
     <footer>
       <div class="socials">
@@ -416,6 +365,40 @@
           m.pause();
         }
       }
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (e) {
+          const nama = document.querySelector("input[name='Nama']").value;
+          const wa = document.querySelector("input[name='WhatsApp']").value;
+          const mulai = document.querySelector(
+            "input[name='Tanggal_Mulai']"
+          ).value;
+          const selesai = document.querySelector(
+            "input[name='Tanggal_Selesai']"
+          ).value;
+          const orang = document.querySelector(
+            "input[name='Jumlah_Orang']"
+          ).value;
+          const paket = document.querySelector("select[name='Paket']").value;
+          const catatan = document.querySelector(
+            "textarea[name='Catatan']"
+          ).value;
+
+          const pesan = `Booking Baru:
+Nama: ${nama}
+WA: ${wa}
+Tanggal: ${mulai} sampai ${selesai}
+Jumlah Orang: ${orang}
+Paket: ${paket}
+Catatan: ${catatan}`;
+
+          // Arahkan ke WhatsApp
+          setTimeout(() => {
+            window.open(
+              "https://wa.me/6285886022912?text=" + encodeURIComponent(pesan)
+            );
+          }, 500);
+        });
     </script>
   </body>
 </html>
