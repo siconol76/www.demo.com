@@ -44,77 +44,79 @@
       animation: float 3s infinite ease-in-out;
       transform: scale(1.12);
     }
-    .autoslider-container {
+    .google-grid {
+      display: grid;
+      gap: 15px;
+      margin-top: 10rem;
+    }
+    .google-card {
+      background: #fff;
+      padding: 10rem;
+      margin-top: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+      border-left: 5px solid #4285f4;
+    }
+    .google-name {
+      font-weight: bold;
+      font-size: 16px;
+      color: #000;
+    }
+    .google-rating {
+      color: #fbbc05;
+      margin: 5px 0;
+    }
+    .google-text {
+      color: #000;
+      font-size: 15px;
+    }
+    .slider {
       width: 100%;
       overflow: hidden;
-      padding: 20px 0;
+      white-space: nowrap;
     }
-
-    .autoslider {
+    .slide-item {
+      display: inline-block;
+      vertical-align: top;
+      width: 300px;
+      margin-right: 15px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+    .grid-review {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+    .grid-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      color: #000;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    }
+    .scroll-row {
+      max-width: 1090px;
+      height: 270px;
+      margin: auto;
+      padding: 10px;
+      overflow-y: auto;
       display: flex;
-      gap: 20px;
-      scroll-snap-type: x mandatory;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-    }
-
-    .slide-card {
-      min-width: 320px;
+      flex-direction: column;
+      gap: 15px;
+      border-radius: 10px;
       background: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      scroll-snap-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
-
-    .slide-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .slide-card h3 {
-      padding: 15px;
-      margin: 0;
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    .slide-card p {
-      padding: 0 15px 10px 15px;
-      color: #444;
-    }
-
-    .detail-btn {
-      display: block;
-      margin: 15px;
-      padding: 12px;
-      background: #ff3b3b;
-      text-align: center;
-      border-radius: 10px;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    /* FULLSCREEN OVERLAY */
-    #lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
+    .scroll-card {
+      min-width: 260px;
+      background: #fff;
+      padding: 18px;
+      border-radius: 12px;
+      color: #000;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     }
   </style>
   <body>
@@ -273,94 +275,125 @@
 
     <!--About section Start-->
 
-    <div class="autoslider-container">
-      <div class="autoslider" id="slideTrack">
-        <!-- CARD 1 -->
-        <div class="slide-card">
-          <img src="https://picsum.photos/id/1011/800/600" alt="" />
-          <h3>Hotel Transfer</h3>
-          <p>
-            Planning to explore different parts of Bali or move to a new hotel?
-            Our hotel transfer service...
-          </p>
-          <a class="detail-btn" href="hotel-transfer.html">VIEW DETAIL</a>
-        </div>
+    <div class="google-grid"></div>
+    <form
+      id="reviewForm"
+      style="
+        max-width: 500px;
+        margin: auto;
+        color: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <h3 style="text-align: center; margin-bottom: 15px">Beri Ulasan Anda</h3>
 
-        <!-- CARD 2 -->
-        <div class="slide-card">
-          <img src="https://picsum.photos/id/1020/800/600" alt="" />
-          <h3>Airport Transfer</h3>
-          <p>
-            Begin your Bali experience with a hassle-free airport transfer. Our
-            friendly driver...
-          </p>
-          <a class="detail-btn" href="airport-transfer.html">VIEW DETAIL</a>
-        </div>
+      <h3>Nama:</h3>
+      <input
+        type="text"
+        id="nama"
+        required
+        style="
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border-radius: 8px;
+          border: 1px solid #000;
+        "
+      />
 
-        <!-- CARD 3 -->
-        <div class="slide-card">
-          <img src="https://picsum.photos/id/1033/800/600" alt="" />
-          <h3>Private Tour</h3>
-          <p>
-            Enjoy a flexible private tour experience with a friendly local
-            driver...
-          </p>
-          <a class="detail-btn" href="tour.html">VIEW DETAIL</a>
-        </div>
-        <!-- CARD 3 -->
-        <div class="slide-card">
-          <img src="https://picsum.photos/id/1033/800/600" alt="" />
-          <h3>Private Tour</h3>
-          <p>
-            Enjoy a flexible private tour experience with a friendly local
-            driver...
-          </p>
-          <a class="detail-btn" href="tour.html">VIEW DETAIL</a>
-        </div>
-        <!-- CARD 3 -->
-        <div class="slide-card">
-          <img src="https://picsum.photos/id/1033/800/600" alt="" />
-          <h3>Private Tour</h3>
-          <p>
-            Enjoy a flexible private tour experience with a friendly local
-            driver...
-          </p>
-          <a class="detail-btn" href="tour.html">VIEW DETAIL</a>
-        </div>
-        <!-- CARD 3 -->
-        <div class="slide-card">
-          <img src="https://picsum.photos/id/1033/800/600" alt="" />
-          <h3>Private Tour</h3>
-          <p>
-            Enjoy a flexible private tour experience with a friendly local
-            driver...
-          </p>
-          <a class="detail-btn" href="tour.html">VIEW DETAIL</a>
-        </div>
-      </div>
-    </div>
+      <h3>Rating:</h3>
+      <select
+        id="rating"
+        required
+        style="
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border-radius: 8px;
+          border: 1px solid #000;
+        "
+      >
+        <option value="5">★★★★★ (5)</option>
+        <option value="4">★★★★☆ (4)</option>
+        <option value="3">★★★☆☆ (3)</option>
+        <option value="2">★★☆☆☆ (2)</option>
+        <option value="1">★☆☆☆☆ (1)</option>
+      </select>
+
+      <h3>Ulasan:</h3>
+      <textarea
+        id="ulasan"
+        required
+        style="
+          width: 100%;
+          padding: 10px;
+          height: 100px;
+          border-radius: 8px;
+          border: 1px solid #000;
+        "
+      ></textarea>
+
+      <button
+        type="submit"
+        style="
+          width: 100%;
+          padding: 12px;
+          margin-top: 10px;
+          background: #27ae60;
+          color: rgb(243, 245, 244);
+          border: 0;
+          border-radius: 8px;
+          font-size: 16px;
+          cursor: pointer;
+        "
+      >
+        Kirim Ulasan
+      </button>
+    </form>
     <!--Footer start-->
-    <footer>
-      <div class="socials">
-        <a href="https://instagram.com/bracukana"
-          ><i data-feather="instagram"></i
-        ></a>
-        <a href="#"><i data-feather="twitter"></i></a>
-        <a href="https://facebook.com/PAN NANA"
-          ><i data-feather="facebook"></i
-        ></a>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Andika Bali Tour</h3>
+          <p>Private Tour • Airport Transfer • Car Rental • Activities</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Kontak</h4>
+          <p><i class="fa-solid fa-phone"></i> +6287860149894</p>
+          <p>
+            <i class="fa-solid fa-envelope"></i> Igedeandikaputra02@gmail.com
+          </p>
+          <p><i class="fa-brands fa-whatsapp"></i> WhatsApp Tersedia 24 Jam</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#paket">Paket Tour</a></li>
+            <li><a href="#rental">Car Rental</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Ikuti Kami</h4>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://instagram.com/gdeandikaputra"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="column">
-        <h3>Kontak</h3>
-        <h3>Jam Buka</h3>
-        <p>Telepon: <a href="tel:08123456789">0812-3456-789</a></p>
-        <div class="column"></div>
-        <p>Telepon: <a href="tel:08123456789">0812-3456-789</a></p>
-        <p>SETIAP HARI</p>
-        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
-      </div>
-      <div class="credit">
-        <p>Created by <a href="#home">@andikabalitour</a>. | &copy; 2025.</p>
+
+      <div class="footer-bottom">
+        © 2025 Andika Bali Tour • All Rights Reserved
       </div>
     </footer>
     <!--Footer end-->
