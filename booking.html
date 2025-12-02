@@ -85,6 +85,24 @@
     .bookingForm button:hover {
       background: #219150;
     }
+    .paket-toggle {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .paket-toggle .opt {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #eaeaea;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .paket-toggle .opt.active {
+      background: #27ae60;
+      color: white;
+    }
   </style>
   <body>
     <!--navbar start-->
@@ -271,18 +289,43 @@
       <label>Jumlah Orang :</label>
       <input type="number" name="Jumlah_Orang" required />
 
-      <label>Paket :</label>
-      <select name="Paket" required>
-        <option value="Tour Ubud">East Bali Tour</option>
-        <option value="North Bali Tour">North Bali Tour</option>
-        <option value="South Bali Tour">South Bali Tour</option>
-        <option value="Adventure Tour">Adventure Tour</option>
-        <option value="Jeep Tour">Jeep Tour</option>
-        <option value="Nusa Penida Tou">Nusa Penida Tour</option>
-        <option value="Tanah Lot Tour">Tanah Lot Tour</option>
-        <option value="bud Tour">Ubud Tour</option>
-        <option value="Water Fall Tour">Water Fall Tour</option>
-      </select>
+      <label>Pilih Paket :</label>
+
+      <div class="paket-toggle">
+        <div class="opt" onclick="togglePaket(this)" data-val="East Bali Tour">
+          East Bali Tour
+        </div>
+        <div class="opt" onclick="togglePaket(this)" data-val="North Bali Tour">
+          North Bali Tour
+        </div>
+        <div class="opt" onclick="togglePaket(this)" data-val="South Bali tour">
+          South Bali tour
+        </div>
+        <div class="opt" onclick="togglePaket(this)" data-val="Adventure Tour">
+          Adventure Tour
+        </div>
+        <div class="opt" onclick="togglePaket(this)" data-val="Ubud Tour">
+          Ubud Tour
+        </div>
+        <div class="opt" onclick="togglePaket(this)" data-val="Tanah Lot Tour">
+          Tanah Lot Tour
+        </div>
+        <div
+          class="opt"
+          onclick="togglePaket(this)"
+          data-val="Nusa Penida Tour"
+        >
+          Nusa Penida Tour
+        </div>
+        <div class="opt" onclick="togglePaket(this)" data-val="Water Fall Tour">
+          Water Fall Tour
+        </div>
+        <div class="opt" onclick="togglePaket(this)" data-val="Jeep Tour">
+          Jeep Tour
+        </div>
+      </div>
+
+      <input type="hidden" name="Paket" id="paketValue" />
 
       <label>Catatan :</label>
       <textarea name="Catatan"></textarea>
@@ -402,6 +445,18 @@ Catatan: ${catatan}`;
             );
           }, 500);
         });
+      function togglePaket(el) {
+        el.classList.toggle("active");
+
+        // Ambil semua yang active
+        let selected = [];
+        document
+          .querySelectorAll(".paket-toggle .opt.active")
+          .forEach((opt) => selected.push(opt.dataset.val));
+
+        // masukkan ke input hidden
+        document.getElementById("paketValue").value = selected.join(", ");
+      }
     </script>
   </body>
 </html>
