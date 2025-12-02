@@ -96,6 +96,25 @@
       border-radius: 12px;
       scroll-snap-align: center;
     }
+    /* FULLSCREEN OVERLAY */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
   </style>
   <body>
     <!--navbar start-->
@@ -259,39 +278,96 @@
       <div class="gallery-card">
         <h3 class="place-name">Pantai Kelingking – Nusa Penida</h3>
         <div class="gallery-slider">
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
         </div>
       </div>
 
       <div class="gallery-card">
         <h3 class="place-name">Air Terjun Gitgit – Buleleng</h3>
         <div class="gallery-slider">
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
         </div>
       </div>
 
       <div class="gallery-card">
         <h3 class="place-name">Pantai Lovina – Singaraja</h3>
         <div class="gallery-slider">
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
-          <img src="https://picsum.photos/600/400?random=2" alt="" />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
+          <img
+            src="https://picsum.photos/600/400?random=2"
+            onclick="openFull(this)"
+          />
         </div>
       </div>
     </section>
+    <div id="lightbox" onclick="closeFull()">
+      <img id="lightbox-img" />
+    </div>
     <!--Footer start-->
     <footer>
       <div class="socials">
@@ -373,6 +449,14 @@
           slider.scrollBy({ left: 300, behavior: "smooth" });
         }, 3000);
       });
+      function openFull(img) {
+        document.getElementById("lightbox-img").src = img.src;
+        document.getElementById("lightbox").style.display = "flex";
+      }
+
+      function closeFull() {
+        document.getElementById("lightbox").style.display = "none";
+      }
     </script>
   </body>
 </html>
