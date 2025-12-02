@@ -282,121 +282,60 @@ body {
   font-size: 1.3rem;
 }
 
-.scroll-x {
-  display: flex;
-  overflow-x: auto;
-  gap: 12px; /* jarak lebih mepet */
-  scroll-snap-type: x mandatory;
-  padding: 10px;
-  white-space: nowrap;
-}
-
-.scroll-x::-webkit-scrollbar {
-  height: 8px;
-}
-
-.scroll-x::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 10px;
-}
-
-.slide {
-  background: #fff; /* background putih */
-  padding: 10px; /* beri ruang biar rapi */
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* gambar & teks di tengah */
-  justify-content: flex-start;
-}
-
-.slide img {
-  width: 90% !important; /* lebih kecil dan proporsional */
-  height: auto !important;
-  border-radius: 12px;
-  display: flex;
-}
-
-.slide-content {
+.autoslider-container {
   width: 100%;
-  text-align: center;
-  padding: 15px 10px;
+  overflow: hidden;
+  padding: 20px 0;
 }
 
-.slide-content h2 {
+.autoslider {
+  display: flex;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.slide-card {
+  min-width: 320px;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: center;
+}
+
+.slide-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.slide-card h4 {
+  padding: 15px;
+  margin: 0;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
+  color: #000;
 }
 
-.slide-content p {
-  font-size: 14px;
-  margin-top: 6px;
+.slide-card p {
+  padding: 0 15px 10px 15px;
   color: #444;
 }
 
-.scroll-wrapper {
-  position: relative;
-}
-
-.scroll-container {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 15px 5px;
-  scrollbar-width: thin;
-}
-
-.scroll-container::-webkit-scrollbar {
-  height: 8px;
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
-  background: #666;
-  border-radius: 10px;
-}
-.detail {
-  color: #555;
-  line-height: 1.4;
-}
-
-.btn-detail {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 14px;
-  background: #0078ff;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 14px;
-}
-.card {
-  min-width: 400px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 50px;
-  box-shadow: 0 0 15px rgba(250, 200, 49, 0.1);
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-}
-
-.card img {
-  width: 100%;
-  height: auto;
+.detail-btn {
   display: block;
+  margin: 15px;
+  padding: 12px;
+  background: #ff3b3b;
+  text-align: center;
   border-radius: 10px;
-  object-fit: cover;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
 }
-
-.price {
-  font-size: 15px;
-  font-weight: bold;
-  color: #fff;
-}
-
 /* Menu section */
 .menu h2,
 .contact h2 {
