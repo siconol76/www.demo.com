@@ -312,7 +312,7 @@ body {
   display: block;
 }
 
-.slide-card h4 {
+.slide-card h3 {
   padding: 15px;
   margin: 0;
   font-size: 20px;
@@ -423,79 +423,68 @@ tr:hover {
   font-size: 1.3rem;
 }
 
-/* ulasan */
-.google-grid {
-  display: grid;
-  gap: 15px;
-}
-.google-card {
-  background: #fff;
+/* booking */
+.bookingForm {
+  max-width: 420px;
+  margin: auto; /* agar form ke kanan */
   padding: 20px;
-  margin-top: 2rem;
-  border-radius: 14px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  border-left: 5px solid #4285f4;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-.google-name {
+.bookingForm h3 {
+  color: #fff;
+}
+
+.bookingForm label {
+  display: block;
   font-weight: bold;
-  font-size: 16px;
-  color: #000;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #fff;
+  text-align: left;
 }
-.google-rating {
-  color: #fbbc05;
-  margin: 5px 0;
-}
-.google-text {
-  color: #000;
-  font-size: 15px;
-}
-.slider {
+
+.bookingForm input,
+.bookingForm select,
+.bookingForm textarea {
   width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.slide-item {
-  display: inline-block;
-  vertical-align: top;
-  width: 300px;
-  margin-right: 15px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
-.grid-review {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-.grid-box {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  color: #000;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-}
-.scroll-row {
-  max-width: 1090px;
-  height: 270px;
-  margin: auto;
-  padding: 10px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  padding: 12px;
   border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
 }
-.scroll-card {
-  min-width: 260px;
-  background: #fff;
-  padding: 18px;
-  border-radius: 12px;
-  color: #000;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+.bookingForm button {
+  width: 100%;
+  padding: 12px;
+  background: #27ae60;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bookingForm button:hover {
+  background: #219150;
+}
+.paket-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.paket-toggle .opt {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #eaeaea;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.paket-toggle .opt.active {
+  background: #27ae60;
+  color: white;
 }
 
 /* Contact Section */
@@ -507,7 +496,7 @@ tr:hover {
   flex-wrap: wrap;
 }
 .contact .row .map {
-  flex: 1 1 45rem;
+  flex: 1 1 30rem;
   width: 100%;
   object-fit: cover;
 }

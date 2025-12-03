@@ -204,7 +204,7 @@
           <!-- CARD 1 -->
           <div class="slide-card">
             <img src="./img/lempuyang-tirtagangga.png" alt="" />
-            <h4>East Bali Tour</h4>
+            <h3>East Bali Tour</h3>
             <p>
               Planning to explore different parts of Bali or move to a new
               hotel? Our hotel transfer service...
@@ -301,14 +301,14 @@
 
     <!--Menu section Start-->
 
-    <section id="menu" class="menu">
+    <section id="menu" class="about">
       <h2><span>Kegiatan yang</span> Menyenangkan</h2>
       <div class="autoslider-container">
         <div class="autoslider" id="slideTrack">
           <!-- CARD 1 -->
           <div class="slide-card">
             <img src="https://picsum.photos/id/1011/800/600" alt="" />
-            <h4>Hotel Transfer</h4>
+            <h3>Hotel Transfer</h3>
             <p>
               Planning to explore different parts of Bali or move to a new
               hotel? Our hotel transfer service...
@@ -438,82 +438,101 @@
           class="map"
         ></iframe>
         <form
-          id="reviewForm"
-          style="
-            max-width: 500px;
-            margin: auto;
-            color: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-          "
+          action="https://formsubmit.co/Igedeandikaputra02@gmail.com"
+          method="POST"
+          id="bookingForm"
+          class="bookingForm"
         >
-          <h3 style="text-align: center; margin-bottom: 15px">
-            Beri Ulasan Anda
-          </h3>
-
-          <label>Nama:</label>
+          <!-- Hidden setup -->
           <input
-            type="text"
-            id="nama"
-            required
-            style="
-              width: 100%;
-              padding: 10px;
-              margin-bottom: 10px;
-              border-radius: 8px;
-              border: 1px solid #ccc;
-            "
+            type="hidden"
+            name="_subject"
+            value="Booking Baru dari Website Andika Bali Tour"
           />
+          <h3>BOOKING SEKARANG</h3>
+          <input type="hidden" name="_captcha" value="false" />
 
-          <label>Rating:</label>
-          <select
-            id="rating"
-            required
-            style="
-              width: 100%;
-              padding: 10px;
-              margin-bottom: 10px;
-              border-radius: 8px;
-              border: 1px solid #ccc;
-            "
-          >
-            <option value="5">★★★★★ (5)</option>
-            <option value="4">★★★★☆ (4)</option>
-            <option value="3">★★★☆☆ (3)</option>
-            <option value="2">★★☆☆☆ (2)</option>
-            <option value="1">★☆☆☆☆ (1)</option>
-          </select>
+          <label>Nama :</label>
+          <input type="text" name="Nama" required />
 
-          <label>Ulasan:</label>
-          <textarea
-            id="ulasan"
-            required
-            style="
-              width: 100%;
-              padding: 10px;
-              height: 100px;
-              border-radius: 8px;
-              border: 1px solid #cccccc;
-            "
-          ></textarea>
+          <label>No WhatsApp :</label>
+          <input type="text" name="WhatsApp" required />
 
-          <button
-            type="submit"
-            style="
-              width: 100%;
-              padding: 12px;
-              margin-top: 10px;
-              background: #27ae60;
-              color: rgb(243, 245, 244);
-              border: 0;
-              border-radius: 8px;
-              font-size: 16px;
-              cursor: pointer;
-            "
-          >
-            Kirim Ulasan
-          </button>
+          <label>Tanggal Mulai :</label>
+          <input type="date" name="Tanggal_Mulai" required />
+
+          <label>Sampai Tanggal :</label>
+          <input type="date" name="Tanggal_Selesai" required />
+
+          <label>Jumlah Orang :</label>
+          <input type="number" name="Jumlah_Orang" required />
+
+          <label>Pilih Paket :</label>
+
+          <div class="paket-toggle">
+            <div
+              class="opt"
+              onclick="togglePaket(this)"
+              data-val="East Bali Tour"
+            >
+              East Bali Tour
+            </div>
+            <div
+              class="opt"
+              onclick="togglePaket(this)"
+              data-val="North Bali Tour"
+            >
+              North Bali Tour
+            </div>
+            <div
+              class="opt"
+              onclick="togglePaket(this)"
+              data-val="South Bali tour"
+            >
+              South Bali tour
+            </div>
+            <div
+              class="opt"
+              onclick="togglePaket(this)"
+              data-val="Adventure Tour"
+            >
+              Adventure Tour
+            </div>
+            <div class="opt" onclick="togglePaket(this)" data-val="Ubud Tour">
+              Ubud Tour
+            </div>
+            <div
+              class="opt"
+              onclick="togglePaket(this)"
+              data-val="Tanah Lot Tour"
+            >
+              Tanah Lot Tour
+            </div>
+            <div
+              class="opt"
+              onclick="togglePaket(this)"
+              data-val="Nusa Penida Tour"
+            >
+              Nusa Penida Tour
+            </div>
+            <div
+              class="opt"
+              onclick="togglePaket(this)"
+              data-val="Water Fall Tour"
+            >
+              Water Fall Tour
+            </div>
+            <div class="opt" onclick="togglePaket(this)" data-val="Jeep Tour">
+              Jeep Tour
+            </div>
+          </div>
+
+          <input type="hidden" name="Paket" id="paketValue" />
+
+          <label>Catatan :</label>
+          <textarea name="Catatan"></textarea>
+
+          <button type="submit">Booking Sekarang</button>
         </form>
       </div>
     </section>
@@ -562,6 +581,7 @@
             <a href="#"><i class="fa-brands fa-tiktok"></i></a>
             <a href="#"><i class="fa-brands fa-youtube"></i></a>
           </div>
+          <a href="test.html" class="detail-btn">Kirim Ulasan</a>
         </div>
       </div>
 
@@ -621,6 +641,53 @@
           scrollAmount = 0;
         }
       }, 4000);
+      // booking
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (e) {
+          const nama = document.querySelector("input[name='Nama']").value;
+          const wa = document.querySelector("input[name='WhatsApp']").value;
+          const mulai = document.querySelector(
+            "input[name='Tanggal_Mulai']"
+          ).value;
+          const selesai = document.querySelector(
+            "input[name='Tanggal_Selesai']"
+          ).value;
+          const orang = document.querySelector(
+            "input[name='Jumlah_Orang']"
+          ).value;
+          const paket = document.querySelector("select[name='Paket']").value;
+          const catatan = document.querySelector(
+            "textarea[name='Catatan']"
+          ).value;
+
+          const pesan = `Booking Baru:
+Nama: ${nama}
+WA: ${wa}
+Tanggal: ${mulai} sampai ${selesai}
+Jumlah Orang: ${orang}
+Paket: ${paket}
+Catatan: ${catatan}`;
+
+          // Arahkan ke WhatsApp
+          setTimeout(() => {
+            window.open(
+              "https://wa.me/6287860149894?text=" + encodeURIComponent(pesan)
+            );
+          }, 500);
+        });
+      function togglePaket(el) {
+        el.classList.toggle("active");
+
+        // Ambil semua yang active
+        let selected = [];
+        document
+          .querySelectorAll(".paket-toggle .opt.active")
+          .forEach((opt) => selected.push(opt.dataset.val));
+
+        // masukkan ke input hidden
+        document.getElementById("paketValue").value = selected.join(", ");
+      }
     </script>
   </body>
 </html>
