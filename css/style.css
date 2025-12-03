@@ -435,6 +435,11 @@ tr:hover {
   color: #fff;
 }
 
+.bookingForm p {
+  color: #787676;
+  font-style: italic;
+  font-size: 1rem;
+}
 .bookingForm label {
   display: block;
   font-weight: bold;

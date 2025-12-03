@@ -15,6 +15,17 @@
 
     <!--feather icons-->
     <script src="https://unpkg.com/feather-icons"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-niuI+5xC2YxrF75PwQx2etcH1E42SUOjgHjlKxvTAd9YpQ1B/uS/Dnr8tO0rtV5pWnOeJs7pLrA+E3v2EJx4Yg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!--my style-->
     <link rel="stylesheet" href="css/style.css" />
@@ -516,7 +527,7 @@
       (() => {
         // Ganti dengan URL Apps Script Web App Anda
         const WEB_APP_URL =
-          "https://script.google.com/macros/s/AKfycbzaC65ZUI4fFiD_lbpZ5B1rOIMkVKyLm9_4pUjbgyHKcqD-UMVOpAlkUJqQ3xlw04yyNA/exec";
+          "https://script.google.com/macros/s/AKfycbyvy_8EIPY9oqsXrfrcDfMsOXEZQwY_y1Euy_y3JNGv3chKtVYc8RvlkgNsC7hpeNNuvQ/exec";
 
         const form = document.getElementById("reviewForm");
         const nameInput = document.getElementById("name");
@@ -628,34 +639,27 @@
           }
 
           try {
-            const res = await fetch(WEB_APP_URL, {
+            await fetch(WEB_APP_URL, {
               method: "POST",
+              mode: "no-cors", // FIX CORS!
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(payload),
             });
-            const json = await res.json();
-            if (json.success) {
-              formMsg.textContent = "Terima kasih! Ulasan terkirim.";
-              // clear form
-              nameInput.value = "";
-              emailInput.value = "";
-              messageInput.value = "";
-              selectedRating = 5;
-              updateStars();
-              // refresh reviews
-              await fetchReviews();
-            } else {
-              formMsg.textContent = "Gagal mengirim ulasan.";
-              console.error(json);
-            }
+
+            formMsg.textContent = "Terima kasih! Ulasan terkirim.";
+
+            // reset form
+            nameInput.value = "";
+            emailInput.value = "";
+            messageInput.value = "";
+            selectedRating = 5;
+            updateStars();
+
+            // refresh ulasan
+            await fetchReviews();
           } catch (err) {
             console.error(err);
-            formMsg.textContent = "Gagal mengirim (network).";
-          } finally {
-            submitBtn.disabled = false;
-            setTimeout(() => {
-              formMsg.textContent = "";
-            }, 4000);
+            formMsg.textContent = "Gagal mengirim.";
           }
         });
 
@@ -673,7 +677,7 @@
         }
 
         // init
-        fetchReviews();
+        // fetchReviews(); dimatikan
       })();
     </script>
   </body>

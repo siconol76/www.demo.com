@@ -533,6 +533,10 @@
           <textarea name="Catatan"></textarea>
 
           <button type="submit">Booking Sekarang</button>
+          <p>
+            notes : Simpan nomor wa terlebih dahulu agar bisa booking otomatis
+            terkirim
+          </p>
         </form>
       </div>
     </section>
@@ -645,36 +649,60 @@
       document
         .getElementById("bookingForm")
         .addEventListener("submit", function (e) {
-          const nama = document.querySelector("input[name='Nama']").value;
-          const wa = document.querySelector("input[name='WhatsApp']").value;
-          const mulai = document.querySelector(
-            "input[name='Tanggal_Mulai']"
-          ).value;
-          const selesai = document.querySelector(
-            "input[name='Tanggal_Selesai']"
-          ).value;
-          const orang = document.querySelector(
-            "input[name='Jumlah_Orang']"
-          ).value;
-          const paket = document.querySelector("select[name='Paket']").value;
-          const catatan = document.querySelector(
-            "textarea[name='Catatan']"
-          ).value;
+          e.preventDefault(); // stop biar tidak reload halaman
 
-          const pesan = `Booking Baru:
+          // Ambil data form
+          const nama = document.querySelector("[name='Nama']").value;
+          const wa = document.querySelector("[name='WhatsApp']").value;
+          const tglMulai = document.querySelector(
+            "[name='Tanggal_Mulai']"
+          ).value;
+          const tglAkhir = document.querySelector(
+            "[name='Tanggal_Selesai']"
+          ).value;
+          const orang = document.querySelector("[name='Jumlah_Orang']").value;
+          const paket = document.getElementById("paketValue").value;
+          const catatan = document.querySelector("[name='Catatan']").value;
+
+          // ===========================
+          // 1) KIRIM KE WHATSAPP ADMIN
+          // ===========================
+          const adminWA = "6287860149894"; // ganti dgn nomor admin tanpa +
+
+          const pesanWA = `Booking Baru!
+------------------------
 Nama: ${nama}
 WA: ${wa}
-Tanggal: ${mulai} sampai ${selesai}
+Tanggal: ${tglMulai} - ${tglAkhir}
 Jumlah Orang: ${orang}
 Paket: ${paket}
-Catatan: ${catatan}`;
+Catatan: ${catatan}
+------------------------
+Andika Bali Tour`;
 
-          // Arahkan ke WhatsApp
-          setTimeout(() => {
-            window.open(
-              "https://wa.me/6287860149894?text=" + encodeURIComponent(pesan)
-            );
-          }, 500);
+          const waURL =
+            "https://wa.me/" + adminWA + "?text=" + encodeURIComponent(pesanWA);
+
+          // Buka WhatsApp otomatis
+          window.open(waURL, "_blank");
+
+          // ===========================
+          // 2) KIRIM EMAIL VIA FORMSUBMIT
+          // ===========================
+
+          // Kirim ke FormSubmit CO agar masuk email Anda
+          const form = document.getElementById("bookingForm");
+
+          fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+          })
+            .then(() => {
+              alert("Booking berhasil dikirim ke Email & WhatsApp!");
+            })
+            .catch(() => {
+              alert("Gagal mengirim email, tapi WA sudah terkirim.");
+            });
         });
       function togglePaket(el) {
         el.classList.toggle("active");
