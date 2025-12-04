@@ -718,7 +718,7 @@ tr:hover {
     white-space: normal; /* turunkan teks */
   }
 }
-@@keyframes bgMove {
+@keyframes bgMove {
   0% {
     transform: scale(1) translateX(0);
   }
