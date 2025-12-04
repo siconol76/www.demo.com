@@ -181,13 +181,22 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("../img/ulundanu.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   position: relative;
-  background-attachment: fixed;
+  overflow: hidden;
+  /* animasi background aman untuk HP */
+  animation: bgMove 12s ease-in-out infinite alternate;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/ulundanu.jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+
+  /* animasi background aman untuk HP */
   animation: bgMove 12s ease-in-out infinite alternate;
 }
 
@@ -280,6 +289,7 @@ body {
 .about .cta {
   color: #000;
   font-size: 1.3rem;
+  font-family: "Funnel+Sans", sans-serif;
 }
 
 .autoslider-container {
@@ -352,6 +362,7 @@ body {
   font-size: 1.3rem;
   max-width: 90rem;
   color: #000;
+  font-family: "Funnel+Sans", sans-serif;
 }
 .body {
   font-family: Arial, sans-serif;
@@ -414,6 +425,7 @@ tr:hover {
   margin-bottom: 8px;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  font-family: "Funnel+Sans", sans-serif;
 }
 .rental h4 {
   font-size: 1.5rem;
@@ -692,6 +704,9 @@ tr:hover {
       font-size: 55%;
     }
   }
+  .hero {
+    animation: bgMove 12s ease-in-out infinite alternate;
+  }
   .about p {
     font-size: 1.2rem;
     word-wrap: break-word; /* pecah kata panjang */
@@ -703,12 +718,12 @@ tr:hover {
     white-space: normal; /* turunkan teks */
   }
 }
-@keyframes bgMove {
+@@keyframes bgMove {
   0% {
-    background-position: center top;
+    transform: scale(1) translateX(0);
   }
   100% {
-    background-position: center bottom;
+    transform: scale(1.1) translateX(-20px);
   }
 }
 @keyframes float {
