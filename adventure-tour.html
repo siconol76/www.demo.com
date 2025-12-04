@@ -1,102 +1,449 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADVENTURE TOUR</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f6f6f6;
-      }
-      header {
-        background: #000;
-        padding: 20px;
-        text-align: center;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-      }
-      .content {
-        max-width: 900px;
-        margin: 30px auto;
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-      .content img {
-        width: 20%;
-        border-radius: 12px;
-        margin-bottom: 20px;
-      }
-      .content p {
-        line-height: 1.8; /* Jarak antar baris lebih nyaman */
-        font-size: 16px; /* Ukuran huruf stabil */
-        color: #333; /* Warna teks hitam lembut (tidak terlalu gelap) */
-        text-align: justify; /* Paragraf rata kiri–kanan (rapi) */
-        margin-bottom: 15px; /* Beri jarak bawah antar paragraf */
-        letter-spacing: 0.3px; /* Spasi huruf sedikit elegan */
-      }
-      .price-box {
-        background: #ffe0b2;
-        padding: 15px;
-        border-radius: 10px;
-        margin-top: 15px;
-        font-size: 18px;
-        font-weight: bold;
-      }
-      a.back {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 12px 20px;
-        background: #000;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-      }
-    </style>
+    <title>SNORKLING</title>
+
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Momo+Trust+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!--feather icons-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!--my style-->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6f6f6;
+    }
+    .music-btn {
+      position: fixed;
+      background: #b85c5c;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 3000;
+      font-weight: 600;
+      animation: float 3s infinite ease-in-out;
+      transform: scale(1.12);
+      bottom: 170px; /* posisi dari bawah */
+      right: 26px; /* posisi dari kanan */
+    }
+    .translate-float {
+      animation: float 3s infinite ease-in-out;
+      transform: scale(1.12);
+    }
+    .vertical-wisata {
+      padding: 20px;
+      margin-top: 10rem;
+    }
+
+    .vw-title {
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .vw-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .vw-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .vw-body {
+      padding: 15px;
+    }
+
+    .vw-body h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .vw-body p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+      text-align: justify;
+      line-height: 1.5;
+    }
+
+    .detail-btn {
+      display: block;
+      margin: 15px;
+      padding: 12px;
+      background: #ff3b3b;
+      text-align: center;
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
   <body>
-    <header>Paket Pura Lempuyang</header>
+    <!--navbar start-->
+    <nav class="navbar">
+      <img src="./img/logo.png" alt="Logokiri" class="logo" />
 
-    <div class="content">
-      <img src="../andika-bali-tour/img/lempuyang.jpg" alt="Pura Lempuyang" />
-      <h2>Adventure</h2>
-      <p>snorkling package + detail + blue lagoon+harga</p>
-      <p>quad bike & rafting + detail + harga</p>
-      <p>water sport + detail + harga</p>
-      <p>
-        Nikmati pengalaman luar biasa mengunjungi Pura Lempuyang yang terkenal
-        dengan
-        <b>Gate of Heaven</b>. Paket wisata ini mencakup lokasi-lokasi terbaik
-        di Bali Timur.
-      </p>
-
-      <h3>Destinasi yang Dikunjungi:</h3>
-      <ul>
-        <li>Pura Lempuyang (Gate of Heaven)</li>
-        <li>Tirta Gangga Water Palace</li>
-        <li>Virgin Beach</li>
-      </ul>
-
-      <div class="price-box">
-        Harga: Rp 450.000 – Rp 650.000 (tergantung jumlah peserta)
+      <div class="navbar-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html">Paket Tour</a>
+        <a href="index.html">Kegiatan Lain</a>
+        <a href="index.html">Car Rental</a>
+        <a href="galery.html">Galery</a>
+        <a href="index.html">Kontak</a>
       </div>
 
-      <h3>Termasuk:</h3>
-      <ul>
-        <li>Driver + BBM</li>
-        <li>Hotel pick up & drop off</li>
-        <li>Mobil AC</li>
-        <li>Biaya Parkir</li>
-        <li>Air Mineral</li>
-        <li>English Speaking driver</li>
-      </ul>
+      <div class="navbar-extra">
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+      <button class="music-btn" onclick="toggleMusic()">♫</button>
+      <audio
+        id="bgm"
+        loop
+        src="./music/kichorus-naturebgm-binaural-sound01-21183.mp3"
+      ></audio>
+      <div id="google_translate_element" class="mini-translate"></div>
+    </nav>
+    <!--navbar end-->
 
-      <a href="index.html" class="back">⬅ Kembali ke Beranda</a>
+    <!--Herro section start-->
+
+    <a href="https://wa.me/6287860149894" class="wa-icon" target="_blank">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+      />
+    </a>
+
+    <!--Herro section end-->
+
+    <!-- Floating Translate Button -->
+    <div class="translate-float" onclick="toggleLangFloat()">🌍</div>
+
+    <div class="translate-options" id="langFloat">
+      <span onclick="doTranslate('en')">🇺🇸 English</span>
+      <span onclick="doTranslate('id')">🇮🇩 Indonesian</span>
+      <span onclick="doTranslate('hi')">🇮🇳 Hindi</span>
+      <span onclick="doTranslate('ja')">🇯🇵 Japanese</span>
+      <span onclick="doTranslate('jw')">🇮🇩 Javanese</span>
+      <span onclick="doTranslate('af')">🇿🇦 Afrikaans</span>
+      <span onclick="doTranslate('sq')">🇦🇱 Albanian</span>
+      <span onclick="doTranslate('am')">🇪🇹 Amharic</span>
+      <span onclick="doTranslate('ar')">🇸🇦 Arabic</span>
+      <span onclick="doTranslate('hy')">🇦🇲 Armenian</span>
+      <span onclick="doTranslate('az')">🇦🇿 Azerbaijani</span>
+      <span onclick="doTranslate('eu')">🇪🇸 Basque</span>
+      <span onclick="doTranslate('be')">🇧🇾 Belarusian</span>
+      <span onclick="doTranslate('bn')">🇧🇩 Bengali</span>
+      <span onclick="doTranslate('bs')">🇧🇦 Bosnian</span>
+      <span onclick="doTranslate('bg')">🇧🇬 Bulgarian</span>
+      <span onclick="doTranslate('ca')">🇪🇸 Catalan</span>
+      <span onclick="doTranslate('ceb')">🇵🇭 Cebuano</span>
+      <span onclick="doTranslate('zh-CN')">🇨🇳 Chinese (Simplified)</span>
+      <span onclick="doTranslate('zh-TW')">🇹🇼 Chinese (Traditional)</span>
+      <span onclick="doTranslate('co')">🇫🇷 Corsican</span>
+      <span onclick="doTranslate('hr')">🇭🇷 Croatian</span>
+      <span onclick="doTranslate('cs')">🇨🇿 Czech</span>
+      <span onclick="doTranslate('da')">🇩🇰 Danish</span>
+      <span onclick="doTranslate('nl')">🇳🇱 Dutch</span>
+      <span onclick="doTranslate('eo')">🌍 Esperanto</span>
+      <span onclick="doTranslate('et')">🇪🇪 Estonian</span>
+      <span onclick="doTranslate('fi')">🇫🇮 Finnish</span>
+      <span onclick="doTranslate('fr')">🇫🇷 French</span>
+      <span onclick="doTranslate('fy')">🇳🇱 Frisian</span>
+      <span onclick="doTranslate('gl')">🇪🇸 Galician</span>
+      <span onclick="doTranslate('ka')">🇬🇪 Georgian</span>
+      <span onclick="doTranslate('de')">🇩🇪 German</span>
+      <span onclick="doTranslate('el')">🇬🇷 Greek</span>
+      <span onclick="doTranslate('gu')">🇮🇳 Gujarati</span>
+      <span onclick="doTranslate('ht')">🇭🇹 Haitian Creole</span>
+      <span onclick="doTranslate('ha')">🇳🇬 Hausa</span>
+      <span onclick="doTranslate('haw')">🇺🇸 Hawaiian</span>
+      <span onclick="doTranslate('iw')">🇮🇱 Hebrew</span>
+      <span onclick="doTranslate('hmn')">🇨🇳 Hmong</span>
+      <span onclick="doTranslate('hu')">🇭🇺 Hungarian</span>
+      <span onclick="doTranslate('is')">🇮🇸 Icelandic</span>
+      <span onclick="doTranslate('ig')">🇳🇬 Igbo</span>
+      <span onclick="doTranslate('ga')">🇮🇪 Irish</span>
+      <span onclick="doTranslate('it')">🇮🇹 Italian</span>
+      <span onclick="doTranslate('kn')">🇮🇳 Kannada</span>
+      <span onclick="doTranslate('kk')">🇰🇿 Kazakh</span>
+      <span onclick="doTranslate('km')">🇰🇭 Khmer</span>
+      <span onclick="doTranslate('rw')">🇷🇼 Kinyarwanda</span>
+      <span onclick="doTranslate('ko')">🇰🇷 Korean</span>
+      <span onclick="doTranslate('ku')">🇮🇶 Kurdish</span>
+      <span onclick="doTranslate('ky')">🇰🇬 Kyrgyz</span>
+      <span onclick="doTranslate('lo')">🇱🇦 Lao</span>
+      <span onclick="doTranslate('la')">🏛 Latin</span>
+      <span onclick="doTranslate('lv')">🇱🇻 Latvian</span>
+      <span onclick="doTranslate('lt')">🇱🇹 Lithuanian</span>
+      <span onclick="doTranslate('lb')">🇱🇺 Luxembourgish</span>
+      <span onclick="doTranslate('mk')">🇲🇰 Macedonian</span>
+      <span onclick="doTranslate('mg')">🇲🇬 Malagasy</span>
+      <span onclick="doTranslate('ms')">🇲🇾 Malay</span>
+      <span onclick="doTranslate('ml')">🇮🇳 Malayalam</span>
+      <span onclick="doTranslate('mt')">🇲🇹 Maltese</span>
+      <span onclick="doTranslate('mi')">🇳🇿 Maori</span>
+      <span onclick="doTranslate('mr')">🇮🇳 Marathi</span>
+      <span onclick="doTranslate('mn')">🇲🇳 Mongolian</span>
+      <span onclick="doTranslate('my')">🇲🇲 Myanmar (Burmese)</span>
+      <span onclick="doTranslate('ne')">🇳🇵 Nepali</span>
+      <span onclick="doTranslate('no')">🇳🇴 Norwegian</span>
+      <span onclick="doTranslate('ny')">🇲🇼 Nyanja</span>
+      <span onclick="doTranslate('or')">🇮🇳 Odia</span>
+      <span onclick="doTranslate('ps')">🇦🇫 Pashto</span>
+      <span onclick="doTranslate('fa')">🇮🇷 Persian</span>
+      <span onclick="doTranslate('pl')">🇵🇱 Polish</span>
+      <span onclick="doTranslate('pt')">🇵🇹 Portuguese</span>
+      <span onclick="doTranslate('pa')">🇮🇳 Punjabi</span>
+      <span onclick="doTranslate('ro')">🇷🇴 Romanian</span>
+      <span onclick="doTranslate('ru')">🇷🇺 Russian</span>
+      <span onclick="doTranslate('sm')">🇼🇸 Samoan</span>
+      <span onclick="doTranslate('gd')">🏴 Scottish Gaelic</span>
+      <span onclick="doTranslate('sr')">🇷🇸 Serbian</span>
+      <span onclick="doTranslate('st')">🇱🇸 Sesotho</span>
+      <span onclick="doTranslate('sn')">🇿🇼 Shona</span>
+      <span onclick="doTranslate('sd')">🇵🇰 Sindhi</span>
+      <span onclick="doTranslate('si')">🇱🇰 Sinhala</span>
+      <span onclick="doTranslate('sk')">🇸🇰 Slovak</span>
+      <span onclick="doTranslate('sl')">🇸🇮 Slovenian</span>
+      <span onclick="doTranslate('so')">🇸🇴 Somali</span>
+      <span onclick="doTranslate('es')">🇪🇸 Spanish</span>
+      <span onclick="doTranslate('su')">🇮🇩 Sundanese</span>
+      <span onclick="doTranslate('sw')">🇰🇪 Swahili</span>
+      <span onclick="doTranslate('sv')">🇸🇪 Swedish</span>
+      <span onclick="doTranslate('tl')">🇵🇭 Tagalog</span>
+      <span onclick="doTranslate('tg')">🇹🇯 Tajik</span>
+      <span onclick="doTranslate('ta')">🇮🇳 Tamil</span>
+      <span onclick="doTranslate('tt')">🇷🇺 Tatar</span>
+      <span onclick="doTranslate('te')">🇮🇳 Telugu</span>
+      <span onclick="doTranslate('th')">🇹🇭 Thai</span>
+      <span onclick="doTranslate('tr')">🇹🇷 Turkish</span>
+      <span onclick="doTranslate('tk')">🇹🇲 Turkmen</span>
+      <span onclick="doTranslate('uk')">🇺🇦 Ukrainian</span>
+      <span onclick="doTranslate('ur')">🇵🇰 Urdu</span>
+      <span onclick="doTranslate('ug')">🇨🇳 Uyghur</span>
+      <span onclick="doTranslate('uz')">🇺🇿 Uzbek</span>
+      <span onclick="doTranslate('vi')">🇻🇳 Vietnamese</span>
+      <span onclick="doTranslate('cy')">🏴 Welsh</span>
+      <span onclick="doTranslate('xh')">🇿🇦 Xhosa</span>
+      <span onclick="doTranslate('yi')">🇮🇱 Yiddish</span>
+      <span onclick="doTranslate('yo')">🇳🇬 Yoruba</span>
+      <span onclick="doTranslate('zu')">🇿🇦 Zulu</span>
     </div>
+    <!-- Floating Translate Button end -->
+
+    <!--About section Start-->
+
+    <section class="vertical-wisata">
+      <h2 class="vw-title">Paket Wisata Populer</h2>
+
+      <!-- ITEM 1 -->
+      <div class="vw-card">
+        <img src="./img/snorkeling.jpeg" class="vw-img" />
+        <div class="vw-body">
+          <h3>snorkeling package</h3>
+          <p>
+            Ajak diri kamu menikmati Bali dari sisi yang tidak semua orang
+            lihat—ayo snorkeling!.
+          </p>
+          <a class="detail-btn" href="tour.html">VIEW DETAIL</a>
+        </div>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="vw-card">
+        <img src="./img/quadbikerafting.jpg" class="vw-img" />
+        <div class="vw-body">
+          <h3>quad bike & rafting</h3>
+          <p>
+            Adventure yang bikin ketawa, teriak, dan nagih lagi!, Rasakan
+            pengalaman berkendara paling seru: ATV Full Track, berlumpur, dan
+            super menantang dan Nikmati jeram, tebing, dan hutan yang indah
+            sepanjang sungai. Adventure seharian full adrenaline, harga tetap
+            hemat.
+          </p>
+          <a class="detail-btn" href="tour.html">VIEW DETAIL</a>
+        </div>
+      </div>
+
+      <!-- ITEM 3 -->
+      <div class="vw-card">
+        <img src="./img/watersport.png" class="vw-img" />
+        <div class="vw-body">
+          <h3>water sport</h3>
+          <p>Ayo main air! Water Sport Bali paling seru menunggu kamu!.</p>
+          <a class="detail-btn" href="tour.html">VIEW DETAIL</a>
+        </div>
+      </div>
+    </section>
+    <!--Footer start-->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Andika Bali Tour</h3>
+          <p>Private Tour • Airport Transfer • Car Rental • Activities</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Kontak</h4>
+          <p><i class="fa-solid fa-phone"></i> +6287860149894</p>
+          <p>
+            <i class="fa-solid fa-envelope"></i> Igedeandikaputra02@gmail.com
+          </p>
+          <p><i class="fa-brands fa-whatsapp"></i> WhatsApp Tersedia 24 Jam</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#paket">Paket Tour</a></li>
+            <li><a href="#rental">Car Rental</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Ikuti Kami</h4>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://instagram.com/gdeandikaputra"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+          <a href="test.html" class="detail-btn">Kirim Ulasan</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 Andika Bali Tour • All Rights Reserved
+      </div>
+    </footer>
+    <!--Footer end-->
+
+    <!--feather icons-->
+    <script>
+      feather.replace();
+    </script>
+    <!-- My Javascript -->
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "id",
+            includedLanguages: "id,en,fr,de,ja,ar,hi,zh-CN,ko,es,ru,th,ms",
+            layout: google.translate.TranslateElement.InlineLayout.VERTIKAL,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+      function toggleLangFloat() {
+        const box = document.getElementById("langFloat");
+        box.style.display = box.style.display === "flex" ? "none" : "flex";
+      }
+
+      function doTranslate(lang) {
+        const select = document.querySelector("select.goog-te-combo");
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event("change"));
+        }
+        document.getElementById("langFloat").style.display = "none";
+      }
+      // Music toggle
+      function startMusic() {
+        const music = document.getElementById("bgm");
+        music.play();
+        localStorage.setItem("musicAllowed", "yes");
+        document.getElementById("btn-detail").style.display = "none";
+      }
+      function toggleMusic() {
+        const m = document.getElementById("bgm");
+        if (m.paused) {
+          m.play();
+        } else {
+          m.pause();
+        }
+      }
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (e) {
+          const nama = document.querySelector("input[name='Nama']").value;
+          const wa = document.querySelector("input[name='WhatsApp']").value;
+          const mulai = document.querySelector(
+            "input[name='Tanggal_Mulai']"
+          ).value;
+          const selesai = document.querySelector(
+            "input[name='Tanggal_Selesai']"
+          ).value;
+          const orang = document.querySelector(
+            "input[name='Jumlah_Orang']"
+          ).value;
+          const paket = document.querySelector("select[name='Paket']").value;
+          const catatan = document.querySelector(
+            "textarea[name='Catatan']"
+          ).value;
+
+          const pesan = `Booking Baru:
+Nama: ${nama}
+WA: ${wa}
+Tanggal: ${mulai} sampai ${selesai}
+Jumlah Orang: ${orang}
+Paket: ${paket}
+Catatan: ${catatan}`;
+
+          // Arahkan ke WhatsApp
+          setTimeout(() => {
+            window.open(
+              "https://wa.me/6287860149894?text=" + encodeURIComponent(pesan)
+            );
+          }, 500);
+        });
+      function togglePaket(el) {
+        el.classList.toggle("active");
+
+        // Ambil semua yang active
+        let selected = [];
+        document
+          .querySelectorAll(".paket-toggle .opt.active")
+          .forEach((opt) => selected.push(opt.dataset.val));
+
+        // masukkan ke input hidden
+        document.getElementById("paketValue").value = selected.join(", ");
+      }
+    </script>
   </body>
 </html>
