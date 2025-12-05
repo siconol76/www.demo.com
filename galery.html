@@ -25,10 +25,9 @@
   </head>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f6f6f6;
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
     }
     .music-btn {
       position: fixed;
@@ -48,76 +47,185 @@
       animation: float 3s infinite ease-in-out;
       transform: scale(1.12);
     }
-    .gallery-v3 {
-      padding: 30px 20px;
-      margin-top: 8rem;
-    }
-    .gallery-v3 h2,
-    .gallery-v3 h3 {
-      color: rgb(81, 79, 79);
-    }
-    .gallery-title {
-      text-align: center;
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 25px;
+    .page {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 12px;
+      margin-top: 10rem;
     }
 
-    .gallery-card {
-      background: white;
-      margin-bottom: 25px;
-      border-radius: 16px;
-      padding: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .place-name {
-      margin: 0 0 10px;
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    .gallery-slider {
+    .profile {
       display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      scroll-snap-type: x mandatory;
-    }
-
-    .gallery-slider::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .gallery-slider::-webkit-scrollbar-thumb {
-      background: #aaa;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      padding: 12px;
       border-radius: 8px;
+      border: 1px solid #e6e6e6;
+    }
+    .profile img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .profile .info {
+      display: flex;
+      flex-direction: column;
+    }
+    .profile .username {
+      font-weight: 700;
+    }
+    .profile .location {
+      color: #514f4f;
+      font-size: 13px;
     }
 
-    .gallery-slider img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px;
-      scroll-snap-align: center;
+    .media-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0;
     }
-    /* FULLSCREEN OVERLAY */
-    #lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
+    .tab-btn {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #e6e6e6;
+      background: #fff;
+      cursor: pointer;
+    }
+    .tab-btn.active {
+      background: #3897f0;
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    .gallery .item,
+    .video-gallery .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: #ddd;
+      height: 180px;
+    }
+    .gallery img,
+    .video-gallery video {
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .gallery .item:hover img {
+      transform: scale(1.06);
     }
 
-    #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
+    /* popup */
+    .popup {
+      position: fixed;
+      inset: 0;
+      display: none;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .popup.active {
+      display: flex;
+    }
+    .popup-content {
+      background: #fff;
+      width: 90%;
+      max-width: 980px;
       border-radius: 10px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      max-height: 90vh;
+    }
+    .popup-left {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .popup-left img,
+    .popup-left video {
+      max-width: 100%;
+      max-height: 86vh;
+      object-fit: contain;
+    }
+    .popup-right {
+      background: #fff;
+      overflow: auto;
+    }
+    .popup-header {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 12px;
+      border-bottom: 1px solid #efefef;
+    }
+    .popup-actions {
+      display: flex;
+      gap: 12px;
+      padding: 12px;
+      border-bottom: 1px solid #efefef;
+    }
+    .icon-btn {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    .big-heart {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0.2);
+      color: #ff2d55;
+      font-size: 120px;
+      opacity: 0;
+      transition: transform 0.35s, opacity 0.25s;
+    }
+    .big-heart.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .nav-btn {
+      pointer-events: auto;
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 40px;
+      padding: 12px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .popup-content {
+        grid-template-columns: 1fr;
+        max-width: 720px;
+      }
+      .popup-right {
+        max-height: 40vh;
+      }
     }
   </style>
   <body>
@@ -276,101 +384,207 @@
 
     <!--About section Start-->
 
-    <section class="gallery-v3">
-      <h2 class="gallery-title">Galeri Wisata</h2>
-
-      <div class="gallery-card">
-        <h3 class="place-name">Pantai Kelingking – Nusa Penida</h3>
-        <div class="gallery-slider">
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
+    <div class="page">
+      <div class="profile">
+        <img src="https://picsum.photos/seed/profile/200/200" alt="profile" />
+        <div class="info">
+          <div class="username">andika.bali.tour</div>
+          <div class="location">Bali, Indonesia</div>
         </div>
       </div>
 
-      <div class="gallery-card">
-        <h3 class="place-name">Air Terjun Gitgit – Buleleng</h3>
-        <div class="gallery-slider">
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
+      <!-- Media tabs under profile -->
+      <div class="media-tabs">
+        <button class="tab-btn active" data-tab="photos">Foto</button>
+        <button class="tab-btn" data-tab="videos">Video</button>
+      </div>
+
+      <!-- Photo gallery -->
+      <div class="gallery" id="gallery">
+        <div
+          class="item"
+          data-type="photo"
+          data-src="https://picsum.photos/id/1018/1200/900"
+          data-caption="Sunrise at the terrace"
+          data-location="Tegallalang, Ubud"
+        >
+          <img src="https://picsum.photos/id/1018/600/400" alt="" />
+        </div>
+        <div
+          class="item"
+          data-type="photo"
+          data-src="https://picsum.photos/id/1025/1200/900"
+          data-caption="Kecak Dance at sunset"
+          data-location="Uluwatu Temple"
+        >
+          <img src="https://picsum.photos/id/1025/600/400" alt="" />
+        </div>
+        <div
+          class="item"
+          data-type="photo"
+          data-src="https://picsum.photos/id/1015/1200/900"
+          data-caption="Hidden waterfall"
+          data-location="Sekumpul, North Bali"
+        >
+          <img src="https://picsum.photos/id/1015/600/400" alt="" />
+        </div>
+        <div
+          class="item"
+          data-type="photo"
+          data-src="https://picsum.photos/id/1016/1200/900"
+          data-caption="Blue lagoon snorkeling"
+          data-location="Blue Lagoon"
+        >
+          <img src="https://picsum.photos/id/1016/600/400" alt="" />
+        </div>
+        <div
+          class="item"
+          data-type="photo"
+          data-src="https://picsum.photos/id/1002/1200/900"
+          data-caption="Cliffside view"
+          data-location="Nusa Penida"
+        >
+          <img src="https://picsum.photos/id/1002/600/400" alt="" />
+        </div>
+        <div
+          class="item"
+          data-type="photo"
+          data-src="https://picsum.photos/id/1003/1200/900"
+          data-caption="Local village vibes"
+          data-location="Tenganan"
+        >
+          <img src="https://picsum.photos/id/1003/600/400" alt="" />
         </div>
       </div>
 
-      <div class="gallery-card">
-        <h3 class="place-name">Pantai Lovina – Singaraja</h3>
-        <div class="gallery-slider">
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
-          <img
-            src="https://picsum.photos/600/400?random=2"
-            onclick="openFull(this)"
-          />
+      <!-- Video gallery will be injected by script and hidden by default -->
+    </div>
+
+    <!-- Fullscreen popup -->
+    <div class="popup" id="popup">
+      <button class="modal-close" id="closeModal" aria-label="Close">✕</button>
+
+      <div class="popup-content" role="dialog" aria-modal="true">
+        <div class="popup-left" id="popupLeft">
+          <div class="big-heart" id="bigHeart">❤</div>
+          <!-- image or video injected here -->
+        </div>
+
+        <div class="popup-right">
+          <div class="popup-header">
+            <img
+              src="https://picsum.photos/seed/profile/200/200"
+              alt="avatar"
+              style="
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                object-fit: cover;
+              "
+            />
+            <div>
+              <div style="font-weight: 700">andika.bali.tour</div>
+              <div id="popupLocation" style="font-size: 13px; color: #434242">
+                Location
+              </div>
+            </div>
+          </div>
+
+          <div class="popup-actions">
+            <button class="icon-btn" id="likeBtn" aria-label="Like">❤</button>
+            <button class="icon-btn" id="commentBtn" aria-label="Comment">
+              💬
+            </button>
+            <button class="icon-btn" id="shareBtn" aria-label="Share">
+              🔗
+            </button>
+          </div>
+
+          <div id="likesCount" style="padding: 0 12px; font-weight: 700">
+            0 likes
+          </div>
+          <div
+            id="popupCaption"
+            style="padding: 8px 12px; border-bottom: 1px solid #434242"
+          ></div>
+
+          <div
+            id="commentWrap"
+            style="
+              display: none;
+              padding: 10px;
+              border-bottom: 1px solid #434242;
+            "
+          >
+            <textarea
+              id="commentInput"
+              style="
+                width: 100%;
+                height: 70px;
+                padding: 8px;
+                border-radius: 8px;
+                border: 1px solid #434242;
+              "
+            ></textarea>
+            <div
+              style="display: flex; justify-content: flex-end; margin-top: 8px"
+            >
+              <button
+                id="postComment"
+                style="
+                  padding: 8px 12px;
+                  border-radius: 8px;
+                  border: 0;
+                  background: #3897f0;
+                  color: #fff;
+                  cursor: pointer;
+                "
+              >
+                Kirim
+              </button>
+            </div>
+          </div>
+
+          <div
+            style="
+              padding: 12px;
+              display: flex;
+              gap: 8px;
+              justify-content: flex-end;
+            "
+          >
+            <button
+              id="downloadBtn"
+              style="
+                padding: 8px 12px;
+                border-radius: 8px;
+                border: 1px solid #ddd;
+                background: #fff;
+                cursor: pointer;
+              "
+            >
+              Download
+            </button>
+            <button
+              id="copyLinkBtn"
+              style="
+                padding: 8px 12px;
+                border-radius: 8px;
+                border: 1px solid #ddd;
+                background: #fff;
+                cursor: pointer;
+              "
+            >
+              Copy Link
+            </button>
+          </div>
         </div>
       </div>
-    </section>
-    <div id="lightbox" onclick="closeFull()">
-      <img id="lightbox-img" />
+
+      <div class="controls">
+        <button class="nav-btn" id="prevBtn">‹</button>
+        <button class="nav-btn" id="nextBtn">›</button>
+      </div>
     </div>
     <!--Footer start-->
     <footer class="footer">
@@ -467,21 +681,257 @@
           m.pause();
         }
       }
-      const sliders = document.querySelectorAll(".gallery-slider");
+      document.addEventListener("DOMContentLoaded", () => {
+        // references
+        const gallery = document.getElementById("gallery");
+        const tabBtns = document.querySelectorAll(".tab-btn");
 
-      sliders.forEach((slider) => {
-        setInterval(() => {
-          slider.scrollBy({ left: 300, behavior: "smooth" });
-        }, 3000);
-      });
-      function openFull(img) {
-        document.getElementById("lightbox-img").src = img.src;
-        document.getElementById("lightbox").style.display = "flex";
-      }
+        // create video gallery container (hidden by default)
+        const videoGallery = document.createElement("div");
+        videoGallery.className = "video-gallery gallery";
+        videoGallery.style.display = "none";
 
-      function closeFull() {
-        document.getElementById("lightbox").style.display = "none";
-      }
+        // example video item (replace ./videos/sample.mp4 with your uploaded file path)
+        videoGallery.innerHTML = `
+        <div class="gallery-item" data-type="video" data-src="./videos/sample.mp4" data-caption="Sample Video" data-location="Bali">
+          <video src="./videos/sample.mp4" muted playsinline></video>
+        </div>
+      `;
+
+        // insert video gallery after photo gallery
+        gallery.parentNode.insertBefore(videoGallery, gallery.nextSibling);
+
+        // tab switching
+        tabBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            tabBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            if (btn.dataset.tab === "photos") {
+              gallery.style.display = "grid";
+              videoGallery.style.display = "none";
+            } else {
+              gallery.style.display = "none";
+              videoGallery.style.display = "grid";
+            }
+          });
+        });
+
+        // gallery items (photos + videos)
+        const items = Array.from(
+          document.querySelectorAll(".gallery .item")
+        ).concat(Array.from(videoGallery.querySelectorAll(".gallery-item")));
+
+        // modal elements
+        const modal = document.getElementById("popup");
+        const popupLeft =
+          document.getElementById("popupLeft") ||
+          document.getElementById("popupLeft");
+        const popupLocation = document.getElementById("popupLocation");
+        const popupCaption = document.getElementById("popupCaption");
+        const likesCountEl = document.getElementById("likesCount");
+        const likeBtn = document.getElementById("likeBtn");
+        const commentBtn = document.getElementById("commentBtn");
+        const commentWrap = document.getElementById("commentWrap");
+        const commentInput = document.getElementById("commentInput");
+        const postComment = document.getElementById("postComment");
+        const shareBtn = document.getElementById("shareBtn");
+        const downloadBtn = document.getElementById("downloadBtn");
+        const copyLinkBtn = document.getElementById("copyLinkBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const closeModal = document.getElementById("closeModal");
+        const bigHeart = document.getElementById("bigHeart");
+        let currentIndex = 0;
+
+        // build a combined list of display items (updates when tabs switch)
+        function getDisplayItems() {
+          const activeGallery =
+            document.querySelector(".tab-btn.active").dataset.tab === "photos"
+              ? gallery
+              : videoGallery;
+          // photo items use .item, video items use .gallery-item
+          const list = Array.from(
+            activeGallery.querySelectorAll(".item, .gallery-item")
+          );
+          return list;
+        }
+
+        // open modal
+        function openModal(index) {
+          const list = getDisplayItems();
+          const el = list[index];
+          if (!el) return;
+
+          const type = el.dataset.type || "photo";
+          const src = el.dataset.src;
+          const caption = el.dataset.caption || "";
+          const location = el.dataset.location || "";
+
+          // clear left area
+          popupLeft.innerHTML = "";
+
+          if (type === "video") {
+            const vid = document.createElement("video");
+            vid.src = src;
+            vid.controls = true;
+            vid.autoplay = true;
+            vid.playsInline = true;
+            popupLeft.appendChild(vid);
+          } else {
+            const img = document.createElement("img");
+            img.src = src;
+            popupLeft.appendChild(img);
+          }
+
+          popupLocation.textContent = location;
+          popupCaption.textContent = caption;
+          likesCountEl.textContent = (el.dataset.likes || 0) + " likes";
+          likeBtn.classList.toggle("liked", el.dataset.liked === "true");
+
+          currentIndex = index;
+          modal.classList.add("active");
+          // reset big heart
+          bigHeart.classList.remove("show");
+        }
+
+        // attach click & double-tap events
+        function attachEventsToList(list) {
+          list.forEach((el, idx) => {
+            // single click opens modal
+            el.addEventListener("click", () => openModal(idx));
+
+            // double-tap for touch devices
+            let lastTap = 0;
+            el.addEventListener("touchstart", (e) => {
+              const now = Date.now();
+              if (now - lastTap < 300) {
+                toggleLike(el, true);
+              }
+              lastTap = now;
+            });
+
+            // desktop double click
+            el.addEventListener("dblclick", () => toggleLike(el, true));
+          });
+        }
+
+        // initial attach
+        attachEventsToList(getDisplayItems());
+
+        // toggle like helper
+        function toggleLike(el, showAnim) {
+          const liked = el.dataset.liked === "true";
+          el.dataset.liked = (!liked).toString();
+          const likes = parseInt(el.dataset.likes || "0", 10);
+          el.dataset.likes = !liked
+            ? (likes + 1).toString()
+            : Math.max(0, likes - 1).toString();
+          likesCountEl.textContent = el.dataset.likes + " likes";
+
+          likeBtn.classList.toggle("liked", el.dataset.liked === "true");
+          if (showAnim) {
+            bigHeart.classList.add("show");
+            setTimeout(() => bigHeart.classList.remove("show"), 700);
+          }
+        }
+
+        // modal controls
+        likeBtn.addEventListener("click", () => {
+          const list = getDisplayItems();
+          const el = list[currentIndex];
+          toggleLike(el, true);
+        });
+
+        commentBtn.addEventListener("click", () => {
+          commentWrap.style.display =
+            commentWrap.style.display === "block" ? "none" : "block";
+        });
+        postComment.addEventListener("click", () => {
+          const text = commentInput.value.trim();
+          if (!text) return alert("Masukkan komentar dulu");
+          alert("Komentar dikirim: " + text);
+          commentInput.value = "";
+          commentWrap.style.display = "none";
+        });
+
+        shareBtn.addEventListener("click", async () => {
+          const list = getDisplayItems();
+          const el = list[currentIndex];
+          const url = el.dataset.src;
+          const text = el.dataset.caption || "";
+          if (navigator.share) {
+            try {
+              await navigator.share({ title: "andikabalitour", text, url });
+            } catch (e) {
+              console.log("share cancelled");
+            }
+          } else {
+            try {
+              await navigator.clipboard.writeText(url);
+              alert("Link foto disalin ke clipboard");
+            } catch (e) {
+              alert("Tidak bisa menyalin link. Silakan copy manual: " + url);
+            }
+          }
+        });
+
+        downloadBtn.addEventListener("click", () => {
+          const list = getDisplayItems();
+          const el = list[currentIndex];
+          const link = document.createElement("a");
+          link.href = el.dataset.src;
+          link.download = "media";
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+        });
+
+        copyLinkBtn.addEventListener("click", async () => {
+          const list = getDisplayItems();
+          const el = list[currentIndex];
+          try {
+            await navigator.clipboard.writeText(el.dataset.src);
+            alert("Link disalin ke clipboard");
+          } catch (e) {
+            alert("Gagal menyalin link");
+          }
+        });
+
+        nextBtn.addEventListener("click", () => {
+          const list = getDisplayItems();
+          currentIndex = (currentIndex + 1) % list.length;
+          openModal(currentIndex);
+        });
+        prevBtn.addEventListener("click", () => {
+          const list = getDisplayItems();
+          currentIndex = (currentIndex - 1 + list.length) % list.length;
+          openModal(currentIndex);
+        });
+
+        closeModal.addEventListener("click", () =>
+          modal.classList.remove("active")
+        );
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) modal.classList.remove("active");
+        });
+
+        // re-attach events when tab changes (so video items get handlers)
+        tabBtns.forEach((btn) =>
+          btn.addEventListener("click", () => {
+            // small delay to allow display change
+            setTimeout(() => {
+              const list = getDisplayItems();
+              // remove previous listeners by cloning nodes (simple approach)
+              list.forEach((el) => {
+                const newEl = el.cloneNode(true);
+                el.parentNode.replaceChild(newEl, el);
+              });
+              attachEventsToList(getDisplayItems());
+            }, 50);
+          })
+        );
+      }); // DOMContentLoaded
     </script>
   </body>
 </html>
