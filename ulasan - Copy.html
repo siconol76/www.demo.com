@@ -3,651 +3,206 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instagram Gallery</title>
+    <title>Booking Form Preview</title>
     <style>
       body {
-        margin: 0;
         font-family: Arial, sans-serif;
-        background: #f3f3f3;
+        margin: 0;
+        padding: 20px;
+        background: #f4f4f4;
       }
-
-      .page {
-        max-width: 900px;
-        margin: 20px auto;
-        padding: 12px;
-      }
-
-      .profile {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background: #fff;
-        padding: 12px;
-        border-radius: 8px;
-        border: 1px solid #e6e6e6;
-      }
-      .profile img {
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-      .profile .info {
-        display: flex;
-        flex-direction: column;
-      }
-      .profile .username {
-        font-weight: 700;
-      }
-      .profile .location {
-        color: #8a8a8a;
-        font-size: 13px;
-      }
-
-      .media-tabs {
-        display: flex;
-        gap: 8px;
-        margin: 12px 0;
-      }
-      .tab-btn {
-        padding: 8px 12px;
-        border-radius: 8px;
-        border: 1px solid #e6e6e6;
-        background: #fff;
-        cursor: pointer;
-      }
-      .tab-btn.active {
-        background: #3897f0;
+      .open-booking {
+        padding: 12px 20px;
+        background: #b49670;
         color: #fff;
-        border-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 6px;
       }
-
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-      }
-      .gallery .item,
-      .video-gallery .gallery-item {
-        position: relative;
-        overflow: hidden;
-        background: #ddd;
-        height: 180px;
-      }
-      .gallery img,
-      .video-gallery video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.35s ease;
-      }
-      .gallery .item:hover img {
-        transform: scale(1.06);
-      }
-
-      /* popup */
-      .popup {
+      .booking-overlay {
         position: fixed;
         inset: 0;
+        background: rgba(0, 0, 0, 0.6);
         display: none;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 9999;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        margin-top: 10rem;
       }
-      .popup.active {
-        display: flex;
-      }
-      .popup-content {
+      .booking-popup {
+        width: 70%;
+        max-width: 800px;
         background: #fff;
-        width: 90%;
-        max-width: 980px;
-        border-radius: 10px;
+        border-radius: 6px;
         overflow: hidden;
-        display: grid;
-        grid-template-columns: 1fr 360px;
-        max-height: 90vh;
+        position: relative;
+        animation: fadeIn 0.3s ease;
       }
-      .popup-left {
-        background: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .booking-title {
+        background: #b49670;
+        color: white;
+        padding: 20px;
+        margin: 0;
+        font-size: 28px;
       }
-      .popup-left img,
-      .popup-left video {
-        max-width: 100%;
-        max-height: 86vh;
-        object-fit: contain;
-      }
-      .popup-right {
-        background: #fff;
-        overflow: auto;
-      }
-      .popup-header {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        padding: 12px;
-        border-bottom: 1px solid #efefef;
-      }
-      .popup-actions {
-        display: flex;
-        gap: 12px;
-        padding: 12px;
-        border-bottom: 1px solid #efefef;
-      }
-      .icon-btn {
-        background: transparent;
-        border: 0;
-        cursor: pointer;
-        font-size: 20px;
-      }
-      .big-heart {
+      .close-booking {
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) scale(0.2);
-        color: #ff2d55;
-        font-size: 120px;
-        opacity: 0;
-        transition: transform 0.35s, opacity 0.25s;
-      }
-      .big-heart.show {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-
-      .controls {
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-        pointer-events: none;
-      }
-      .nav-btn {
-        pointer-events: auto;
-        background: transparent;
-        border: 0;
+        right: 20px;
+        top: 18px;
         color: #fff;
-        font-size: 40px;
-        padding: 12px;
+        cursor: pointer;
+        font-size: 28px;
+      }
+      .form-row {
+        display: flex;
+        padding: 12px 20px;
+        gap: 20px;
+        align-items: center;
+      }
+      .form-row label {
+        width: 260px;
+        font-weight: bold;
+        color: #333;
+      }
+      .form-row input,
+      .form-row select,
+      .form-row textarea {
+        flex: 1;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+      }
+      .booking-submit {
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+        background: #b49670;
+        border: 0;
+        color: white;
+        font-size: 20px;
         cursor: pointer;
       }
-
-      @media (max-width: 700px) {
-        .gallery {
-          grid-template-columns: repeat(2, 1fr);
+      .booking-submit:hover {
+        background: #9c825e;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
         }
-        .popup-content {
-          grid-template-columns: 1fr;
-          max-width: 720px;
-        }
-        .popup-right {
-          max-height: 40vh;
+        to {
+          opacity: 1;
+          transform: scale(1);
         }
       }
     </style>
   </head>
   <body>
-    <div class="page">
-      <div class="profile">
-        <img src="https://picsum.photos/seed/profile/200/200" alt="profile" />
-        <div class="info">
-          <div class="username">andika.bali.tour</div>
-          <div class="location">Bali, Indonesia</div>
-        </div>
-      </div>
+    <button class="open-booking">Booking Sekarang</button>
 
-      <!-- Media tabs under profile -->
-      <div class="media-tabs">
-        <button class="tab-btn active" data-tab="photos">Foto</button>
-        <button class="tab-btn" data-tab="videos">Video</button>
-      </div>
+    <div class="booking-overlay" id="bookingOverlay">
+      <div class="booking-popup">
+        <span class="close-booking" id="closeBooking">&times;</span>
+        <h2 class="booking-title">FORMULIR PEMESANAN</h2>
 
-      <!-- Photo gallery -->
-      <div class="gallery" id="gallery">
-        <div
-          class="item"
-          data-type="photo"
-          data-src="https://picsum.photos/id/1018/1200/900"
-          data-caption="Sunrise at the terrace"
-          data-location="Tegallalang, Ubud"
+        <form
+          id="bookingForm"
+          action="https://formsubmit.co/demo@gmail.com"
+          method="POST"
         >
-          <img src="https://picsum.photos/id/1018/600/400" alt="" />
-        </div>
-        <div
-          class="item"
-          data-type="photo"
-          data-src="https://picsum.photos/id/1025/1200/900"
-          data-caption="Kecak Dance at sunset"
-          data-location="Uluwatu Temple"
-        >
-          <img src="https://picsum.photos/id/1025/600/400" alt="" />
-        </div>
-        <div
-          class="item"
-          data-type="photo"
-          data-src="https://picsum.photos/id/1015/1200/900"
-          data-caption="Hidden waterfall"
-          data-location="Sekumpul, North Bali"
-        >
-          <img src="https://picsum.photos/id/1015/600/400" alt="" />
-        </div>
-        <div
-          class="item"
-          data-type="photo"
-          data-src="https://picsum.photos/id/1016/1200/900"
-          data-caption="Blue lagoon snorkeling"
-          data-location="Blue Lagoon"
-        >
-          <img src="https://picsum.photos/id/1016/600/400" alt="" />
-        </div>
-        <div
-          class="item"
-          data-type="photo"
-          data-src="https://picsum.photos/id/1002/1200/900"
-          data-caption="Cliffside view"
-          data-location="Nusa Penida"
-        >
-          <img src="https://picsum.photos/id/1002/600/400" alt="" />
-        </div>
-        <div
-          class="item"
-          data-type="photo"
-          data-src="https://picsum.photos/id/1003/1200/900"
-          data-caption="Local village vibes"
-          data-location="Tenganan"
-        >
-          <img src="https://picsum.photos/id/1003/600/400" alt="" />
-        </div>
-      </div>
-
-      <!-- Video gallery will be injected by script and hidden by default -->
-    </div>
-
-    <!-- Fullscreen popup -->
-    <div class="popup" id="popup">
-      <button class="modal-close" id="closeModal" aria-label="Close">✕</button>
-
-      <div class="popup-content" role="dialog" aria-modal="true">
-        <div class="popup-left" id="popupLeft">
-          <div class="big-heart" id="bigHeart">❤</div>
-          <!-- image or video injected here -->
-        </div>
-
-        <div class="popup-right">
-          <div class="popup-header">
-            <img
-              src="https://picsum.photos/seed/profile/200/200"
-              alt="avatar"
-              style="
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                object-fit: cover;
-              "
-            />
-            <div>
-              <div style="font-weight: 700">andika.bali.tour</div>
-              <div id="popupLocation" style="font-size: 13px; color: #8a8a8a">
-                Location
-              </div>
-            </div>
+          <div class="form-row">
+            <label>Nama Lengkap Anda :</label
+            ><input type="text" name="nama" required />
+          </div>
+          <div class="form-row">
+            <label>Alamat Email Anda :</label
+            ><input type="email" name="email" required />
+          </div>
+          <div class="form-row">
+            <label>Nomor Telepon Anda :</label
+            ><input type="text" name="telepon" required />
+          </div>
+          <div class="form-row">
+            <label>Kebangsaan Anda :</label
+            ><input type="text" name="kebangsaan" required />
+          </div>
+          <div class="form-row">
+            <label>Paket Wisata Anda :</label
+            ><select name="paket">
+              <option>Ubud Tour</option>
+              <option>Nusa Penida</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Tanggal Tur / Aktivitas :</label
+            ><input type="date" name="tanggal" />
+          </div>
+          <div class="form-row">
+            <label>Jumlah Orang :</label><input type="number" name="jumlah" />
+          </div>
+          <div class="form-row">
+            <label>Nama Hotel :</label><input type="text" name="hotel" />
+          </div>
+          <div class="form-row">
+            <label>Detail Pemesanan :</label
+            ><textarea name="pesan" rows="3"></textarea>
           </div>
 
-          <div class="popup-actions">
-            <button class="icon-btn" id="likeBtn" aria-label="Like">❤</button>
-            <button class="icon-btn" id="commentBtn" aria-label="Comment">
-              💬
-            </button>
-            <button class="icon-btn" id="shareBtn" aria-label="Share">
-              🔗
-            </button>
-          </div>
-
-          <div id="likesCount" style="padding: 0 12px; font-weight: 700">
-            0 likes
-          </div>
-          <div
-            id="popupCaption"
-            style="padding: 8px 12px; border-bottom: 1px solid #efefef"
-          ></div>
-
-          <div
-            id="commentWrap"
-            style="
-              display: none;
-              padding: 10px;
-              border-bottom: 1px solid #efefef;
-            "
-          >
-            <textarea
-              id="commentInput"
-              style="
-                width: 100%;
-                height: 70px;
-                padding: 8px;
-                border-radius: 8px;
-                border: 1px solid #e6e6e6;
-              "
-            ></textarea>
-            <div
-              style="display: flex; justify-content: flex-end; margin-top: 8px"
-            >
-              <button
-                id="postComment"
-                style="
-                  padding: 8px 12px;
-                  border-radius: 8px;
-                  border: 0;
-                  background: #3897f0;
-                  color: #fff;
-                  cursor: pointer;
-                "
-              >
-                Kirim
-              </button>
-            </div>
-          </div>
-
-          <div
-            style="
-              padding: 12px;
-              display: flex;
-              gap: 8px;
-              justify-content: flex-end;
-            "
-          >
-            <button
-              id="downloadBtn"
-              style="
-                padding: 8px 12px;
-                border-radius: 8px;
-                border: 1px solid #ddd;
-                background: #fff;
-                cursor: pointer;
-              "
-            >
-              Download
-            </button>
-            <button
-              id="copyLinkBtn"
-              style="
-                padding: 8px 12px;
-                border-radius: 8px;
-                border: 1px solid #ddd;
-                background: #fff;
-                cursor: pointer;
-              "
-            >
-              Copy Link
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="controls">
-        <button class="nav-btn" id="prevBtn">‹</button>
-        <button class="nav-btn" id="nextBtn">›</button>
+          <button type="submit" class="booking-submit">Kirim Pemesanan</button>
+        </form>
       </div>
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // references
-        const gallery = document.getElementById("gallery");
-        const tabBtns = document.querySelectorAll(".tab-btn");
+      const openBtn = document.querySelector(".open-booking");
+      const bookingOverlay = document.getElementById("bookingOverlay");
+      const closeBooking = document.getElementById("closeBooking");
 
-        // create video gallery container (hidden by default)
-        const videoGallery = document.createElement("div");
-        videoGallery.className = "video-gallery gallery";
-        videoGallery.style.display = "none";
+      openBtn.onclick = () => (bookingOverlay.style.display = "flex");
+      closeBooking.onclick = () => (bookingOverlay.style.display = "none");
+      window.onclick = (e) => {
+        if (e.target === bookingOverlay) bookingOverlay.style.display = "none";
+      };
 
-        // example video item (replace ./videos/sample.mp4 with your uploaded file path)
-        videoGallery.innerHTML = `
-        <div class="gallery-item" data-type="video" data-src="./videos/sample.mp4" data-caption="Sample Video" data-location="Bali">
-          <video src="./videos/sample.mp4" muted playsinline></video>
-        </div>
-      `;
+      // WA + Email
 
-        // insert video gallery after photo gallery
-        gallery.parentNode.insertBefore(videoGallery, gallery.nextSibling);
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-        // tab switching
-        tabBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            tabBtns.forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
+          const data = new FormData(this);
+          const nama = data.get("nama");
+          const email = data.get("email");
+          const telepon = data.get("telepon");
+          const kebangsaan = data.get("kebangsaan");
+          const paket = data.get("paket");
+          const tanggal = data.get("tanggal");
+          const jumlah = data.get("jumlah");
+          const hotel = data.get("hotel");
+          const pesan = data.get("pesan");
 
-            if (btn.dataset.tab === "photos") {
-              gallery.style.display = "grid";
-              videoGallery.style.display = "none";
-            } else {
-              gallery.style.display = "none";
-              videoGallery.style.display = "grid";
-            }
-          });
-        });
+          const admin1 = "6281234567890";
+          const admin2 = "6289876543210";
 
-        // gallery items (photos + videos)
-        const items = Array.from(
-          document.querySelectorAll(".gallery .item")
-        ).concat(Array.from(videoGallery.querySelectorAll(".gallery-item")));
+          const waMessage = `FORM BOOKING ANDIKA BALI TOUR\n\nNama: ${nama}\nEmail: ${email}\nTelepon: ${telepon}\nKebangsaan: ${kebangsaan}\nPaket: ${paket}\nTanggal: ${tanggal}\nJumlah Orang: ${jumlah}\nHotel: ${hotel}\n\nPesan Tambahan:\n${pesan}`;
 
-        // modal elements
-        const modal = document.getElementById("popup");
-        const popupLeft =
-          document.getElementById("popupLeft") ||
-          document.getElementById("popupLeft");
-        const popupLocation = document.getElementById("popupLocation");
-        const popupCaption = document.getElementById("popupCaption");
-        const likesCountEl = document.getElementById("likesCount");
-        const likeBtn = document.getElementById("likeBtn");
-        const commentBtn = document.getElementById("commentBtn");
-        const commentWrap = document.getElementById("commentWrap");
-        const commentInput = document.getElementById("commentInput");
-        const postComment = document.getElementById("postComment");
-        const shareBtn = document.getElementById("shareBtn");
-        const downloadBtn = document.getElementById("downloadBtn");
-        const copyLinkBtn = document.getElementById("copyLinkBtn");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-        const closeModal = document.getElementById("closeModal");
-        const bigHeart = document.getElementById("bigHeart");
-        let currentIndex = 0;
-
-        // build a combined list of display items (updates when tabs switch)
-        function getDisplayItems() {
-          const activeGallery =
-            document.querySelector(".tab-btn.active").dataset.tab === "photos"
-              ? gallery
-              : videoGallery;
-          // photo items use .item, video items use .gallery-item
-          const list = Array.from(
-            activeGallery.querySelectorAll(".item, .gallery-item")
+          window.open(
+            `https://wa.me/${admin1}?text=${encodeURIComponent(waMessage)}`,
+            "_blank"
           );
-          return list;
-        }
 
-        // open modal
-        function openModal(index) {
-          const list = getDisplayItems();
-          const el = list[index];
-          if (!el) return;
+          setTimeout(() => {
+            window.open(
+              `https://wa.me/${admin2}?text=${encodeURIComponent(waMessage)}`,
+              "_blank"
+            );
+          }, 1000);
 
-          const type = el.dataset.type || "photo";
-          const src = el.dataset.src;
-          const caption = el.dataset.caption || "";
-          const location = el.dataset.location || "";
-
-          // clear left area
-          popupLeft.innerHTML = "";
-
-          if (type === "video") {
-            const vid = document.createElement("video");
-            vid.src = src;
-            vid.controls = true;
-            vid.autoplay = true;
-            vid.playsInline = true;
-            popupLeft.appendChild(vid);
-          } else {
-            const img = document.createElement("img");
-            img.src = src;
-            popupLeft.appendChild(img);
-          }
-
-          popupLocation.textContent = location;
-          popupCaption.textContent = caption;
-          likesCountEl.textContent = (el.dataset.likes || 0) + " likes";
-          likeBtn.classList.toggle("liked", el.dataset.liked === "true");
-
-          currentIndex = index;
-          modal.classList.add("active");
-          // reset big heart
-          bigHeart.classList.remove("show");
-        }
-
-        // attach click & double-tap events
-        function attachEventsToList(list) {
-          list.forEach((el, idx) => {
-            // single click opens modal
-            el.addEventListener("click", () => openModal(idx));
-
-            // double-tap for touch devices
-            let lastTap = 0;
-            el.addEventListener("touchstart", (e) => {
-              const now = Date.now();
-              if (now - lastTap < 300) {
-                toggleLike(el, true);
-              }
-              lastTap = now;
-            });
-
-            // desktop double click
-            el.addEventListener("dblclick", () => toggleLike(el, true));
-          });
-        }
-
-        // initial attach
-        attachEventsToList(getDisplayItems());
-
-        // toggle like helper
-        function toggleLike(el, showAnim) {
-          const liked = el.dataset.liked === "true";
-          el.dataset.liked = (!liked).toString();
-          const likes = parseInt(el.dataset.likes || "0", 10);
-          el.dataset.likes = !liked
-            ? (likes + 1).toString()
-            : Math.max(0, likes - 1).toString();
-          likesCountEl.textContent = el.dataset.likes + " likes";
-
-          likeBtn.classList.toggle("liked", el.dataset.liked === "true");
-          if (showAnim) {
-            bigHeart.classList.add("show");
-            setTimeout(() => bigHeart.classList.remove("show"), 700);
-          }
-        }
-
-        // modal controls
-        likeBtn.addEventListener("click", () => {
-          const list = getDisplayItems();
-          const el = list[currentIndex];
-          toggleLike(el, true);
+          this.submit();
         });
-
-        commentBtn.addEventListener("click", () => {
-          commentWrap.style.display =
-            commentWrap.style.display === "block" ? "none" : "block";
-        });
-        postComment.addEventListener("click", () => {
-          const text = commentInput.value.trim();
-          if (!text) return alert("Masukkan komentar dulu");
-          alert("Komentar dikirim: " + text);
-          commentInput.value = "";
-          commentWrap.style.display = "none";
-        });
-
-        shareBtn.addEventListener("click", async () => {
-          const list = getDisplayItems();
-          const el = list[currentIndex];
-          const url = el.dataset.src;
-          const text = el.dataset.caption || "";
-          if (navigator.share) {
-            try {
-              await navigator.share({ title: "andikabalitour", text, url });
-            } catch (e) {
-              console.log("share cancelled");
-            }
-          } else {
-            try {
-              await navigator.clipboard.writeText(url);
-              alert("Link foto disalin ke clipboard");
-            } catch (e) {
-              alert("Tidak bisa menyalin link. Silakan copy manual: " + url);
-            }
-          }
-        });
-
-        downloadBtn.addEventListener("click", () => {
-          const list = getDisplayItems();
-          const el = list[currentIndex];
-          const link = document.createElement("a");
-          link.href = el.dataset.src;
-          link.download = "media";
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
-        });
-
-        copyLinkBtn.addEventListener("click", async () => {
-          const list = getDisplayItems();
-          const el = list[currentIndex];
-          try {
-            await navigator.clipboard.writeText(el.dataset.src);
-            alert("Link disalin ke clipboard");
-          } catch (e) {
-            alert("Gagal menyalin link");
-          }
-        });
-
-        nextBtn.addEventListener("click", () => {
-          const list = getDisplayItems();
-          currentIndex = (currentIndex + 1) % list.length;
-          openModal(currentIndex);
-        });
-        prevBtn.addEventListener("click", () => {
-          const list = getDisplayItems();
-          currentIndex = (currentIndex - 1 + list.length) % list.length;
-          openModal(currentIndex);
-        });
-
-        closeModal.addEventListener("click", () =>
-          modal.classList.remove("active")
-        );
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) modal.classList.remove("active");
-        });
-
-        // re-attach events when tab changes (so video items get handlers)
-        tabBtns.forEach((btn) =>
-          btn.addEventListener("click", () => {
-            // small delay to allow display change
-            setTimeout(() => {
-              const list = getDisplayItems();
-              // remove previous listeners by cloning nodes (simple approach)
-              list.forEach((el) => {
-                const newEl = el.cloneNode(true);
-                el.parentNode.replaceChild(newEl, el);
-              });
-              attachEventsToList(getDisplayItems());
-            }, 50);
-          })
-        );
-      }); // DOMContentLoaded
     </script>
   </body>
 </html>

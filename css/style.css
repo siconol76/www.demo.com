@@ -181,23 +181,11 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  position: relative;
-  overflow: hidden;
-  /* animasi background aman untuk HP */
-  animation: bgMove 12s ease-in-out infinite alternate;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("../img/ulundanu.jpg");
+  background-image: url("../img/beratan.png");
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-
-  /* animasi background aman untuk HP */
-  animation: bgMove 12s ease-in-out infinite alternate;
+  position: relative;
 }
 
 .hero::after {
