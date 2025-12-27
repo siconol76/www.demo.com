@@ -123,6 +123,47 @@
       transform: scale(1.06);
     }
 
+    .comment-box {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .comment-list {
+      max-height: 350px; /* tinggi maksimal */
+      overflow-y: auto; /* AKTIFKAN SCROLL */
+      margin-top: 15px;
+      padding-right: 6px;
+    }
+
+    /* Tampilan komentar */
+    .comment-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .comment-item strong {
+      display: block;
+      color: #222;
+      margin-bottom: 4px;
+    }
+
+    .comment-item p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Scrollbar halus */
+    .comment-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .comment-list::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+    }
     /* popup */
     .popup {
       position: fixed;
@@ -386,7 +427,7 @@
 
     <div class="page">
       <div class="profile">
-        <img src="https://picsum.photos/seed/profile/200/200" alt="profile" />
+        <img src="./img/andika.jpg" alt="profile" />
         <div class="info">
           <div class="username">andika.bali.tour</div>
           <div class="location">Bali, Indonesia</div>
@@ -473,7 +514,7 @@
         <div class="popup-right">
           <div class="popup-header">
             <img
-              src="https://picsum.photos/seed/profile/200/200"
+              src="./img/andika.jpg"
               alt="avatar"
               style="
                 width: 44px;
@@ -516,8 +557,25 @@
               border-bottom: 1px solid #434242;
             "
           >
+            <input
+              type="text"
+              id="nama"
+              placeholder="Nama"
+              required
+              style="
+                width: 100%;
+                height: 35px;
+                padding: 8px;
+                border-radius: 8px;
+                border: 1px solid #434242;
+                margin-bottom: 0.5rem;
+              "
+            />
+
             <textarea
-              id="commentInput"
+              id="komentar"
+              placeholder="Tulis komentar..."
+              required
               style="
                 width: 100%;
                 height: 70px;
@@ -530,7 +588,7 @@
               style="display: flex; justify-content: flex-end; margin-top: 8px"
             >
               <button
-                id="postComment"
+                onclick="kirimKomentar()"
                 style="
                   padding: 8px 12px;
                   border-radius: 8px;
@@ -543,6 +601,7 @@
                 Kirim
               </button>
             </div>
+            <div id="listKomentar" class="comment-list"></div>
           </div>
 
           <div
@@ -932,6 +991,48 @@
           })
         );
       }); // DOMContentLoaded
+
+      const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbzV_4eG3pOu2bxN9anEG5izE7tmdcyzcF5VptUFrQyTzk9bFaG2IqhRyx3oxB4OAiy_hA/exec";
+
+      function kirimKomentar() {
+        const nama = document.getElementById("nama").value;
+        const komentar = document.getElementById("komentar").value;
+
+        if (!nama || !komentar) {
+          alert("Nama & komentar wajib diisi");
+          return;
+        }
+
+        fetch(SCRIPT_URL, {
+          method: "POST",
+          body: JSON.stringify({ nama, komentar }),
+        }).then(() => {
+          document.getElementById("nama").value = "";
+          document.getElementById("komentar").value = "";
+          loadKomentar();
+        });
+      }
+
+      function loadKomentar() {
+        fetch(SCRIPT_URL)
+          .then((res) => res.json())
+          .then((data) => {
+            const list = document.getElementById("listKomentar");
+            list.innerHTML = "";
+
+            data.reverse().forEach((item) => {
+              list.innerHTML += `
+          <div class="comment-item">
+            <strong>${item.nama}</strong>
+            <p>${item.komentar}</p>
+          </div>
+        `;
+            });
+          });
+      }
+
+      loadKomentar();
     </script>
   </body>
 </html>
