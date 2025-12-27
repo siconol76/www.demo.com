@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Momo+Trust+Display&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!--feather icons-->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -25,70 +29,6 @@
       margin: 0;
       padding: 0;
       background: #f6f6f6;
-    }
-    header {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .content {
-      max-width: 1000px;
-      margin: 30px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .content img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    .content p {
-      line-height: 1.8; /* Jarak antar baris lebih nyaman */
-      font-size: 16px; /* Ukuran huruf stabil */
-      color: #333; /* Warna teks hitam lembut (tidak terlalu gelap) */
-      text-align: justify; /* Paragraf rata kiri–kanan (rapi) */
-      margin-bottom: 15px; /* Beri jarak bawah antar paragraf */
-      letter-spacing: 0.3px; /* Spasi huruf sedikit elegan */
-    }
-    .content li {
-      text-align: left;
-      color: #333; /* Warna teks hitam lembut (tidak terlalu gelap) */
-      font-size: 16px; /* Ukuran huruf stabil */
-      line-height: 1.8;
-      text-align: justify;
-      letter-spacing: 0.3px; /* Spasi huruf sedikit elegan */
-      margin-bottom: 13px; /* Beri jarak bawah antar paragraf */
-    }
-    .content h2 {
-      text-align: center;
-      line-height: 1.8;
-      margin-top: 20px; /* Beri jarak bawah antar paragraf */
-    }
-    .price-box {
-      background: #ffe0b2;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 15px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    a.back {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 20px;
-      background: #000;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      display: inline-block;
-      text-decoration: none;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-      text-align: right;
     }
     .music-btn {
       position: fixed;
@@ -108,6 +48,170 @@
       animation: float 3s infinite ease-in-out;
       transform: scale(1.12);
     }
+    .vertical-wisata {
+      padding: 20px;
+      margin-top: 10rem;
+    }
+
+    .vw-title {
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    .vw-body li {
+      color: #555;
+      text-align: justify;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .vw-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .vw-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .vw-body {
+      padding: 15px;
+    }
+
+    .vw-body h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .vw-body p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+      text-align: justify;
+      line-height: 1.5;
+    }
+
+    .detail-btn {
+      display: block;
+      margin: 15px;
+      padding: 12px;
+      background: #ff3b3b;
+      text-align: center;
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .detail-page {
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 9rem;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 2.5fr 1fr;
+      gap: 20px;
+    }
+
+    /* KONTEN KIRI */
+    .detail-main {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .main-image {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .detail-main h1 {
+      margin: 20px 0 10px;
+    }
+
+    .detail-main p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .detail-list {
+      padding-left: 18px;
+      margin: 20px 0;
+    }
+
+    .btn-book {
+      display: inline-block;
+      background: #ff3b3b;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* PANEL KANAN */
+    .detail-side {
+      position: sticky;
+      top: 20px;
+    }
+
+    .side-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 15px;
+    }
+
+    .side-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .side-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .side-item img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .side-item h4 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .side-item a {
+      font-size: 13px;
+      color: #ff3b3b;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE HP */
+    @media (max-width: 768px) {
+      .detail-page {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-side {
+        position: relative;
+      }
+
+      .main-image {
+        height: 260px;
+      }
+    }
   </style>
   <body>
     <!--navbar start-->
@@ -115,11 +219,12 @@
       <img src="./img/logo.png" alt="Logokiri" class="logo" />
 
       <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">Paket Tour</a>
-        <a href="#menu">Kegiatan Lain</a>
-        <a href="#rental">Car Rental</a>
-        <a href="#contact">Kontak</a>
+        <a href="index.html">Home</a>
+        <a href="index.html">Paket Tour</a>
+        <a href="index.html">Kegiatan Lain</a>
+        <a href="index.html">Car Rental</a>
+        <a href="galery.html">Galery</a>
+        <a href="index.html">Kontak</a>
       </div>
 
       <div class="navbar-extra">
@@ -133,7 +238,7 @@
 
     <!--Herro section start-->
 
-    <a href="https://wa.me/6285886022912" class="wa-icon" target="_blank">
+    <a href="https://wa.me/6287860149894" class="wa-icon" target="_blank">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
         alt="WhatsApp"
@@ -260,110 +365,151 @@
 
     <!--About section Start-->
 
-    <section id="about" class="about">
-      <h2>NORTH BALI TOUR</h2>
+    <section class="detail-page">
+      <!-- KIRI : konten utama -->
+      <div class="detail-main">
+        <img src="./img/north.png" alt="South Bali Tour" class="main-image" />
 
-      <div class="content">
-        <img src="./img/lempuyang-tirtagangga.png" alt="Pura Lempuyang" />
-        <h2>PURA LEMPUYANG</h2>
+        <h1>north Bali Tour</h1>
         <p>
-          Pura Lempuyang adalah salah satu pura tertua dan paling suci di Bali,
-          terletak di Kabupaten Karangasem. Pura ini terkenal dengan gerbang
-          ikoniknya yang disebut <b>Gate of Heaven</b>, yang membingkai
-          pemandangan Gunung Agung secara dramatis.
+          “Rasakan petualangan seru dari pagi hingga sore: trekking air terjun,
+          foto di danau, dan menikmati pantai biru.” “Private Trip Bali
+          Utara—nyaman, aman, dan ditemani driver profesional.”
         </p>
-        <p>Ciri khasnya:</p>
-        <ul>
-          <li>
-            Berada di ketinggian bukit sehingga memberikan panorama awan dan
-            matahari terbit yang sangat indah.
-          </li>
-          <li>
-            Merupakan bagian dari <b>Sad Kahyangan</b>, enam pura utama penjaga
-            keseimbangan Bali.
-          </li>
-          <li>
-            Untuk mencapai pura utama, pengunjung biasanya harus menaiki banyak
-            anak tangga, namun area gerbang di bawahnya sudah sangat populer
-            sebagai spot foto.
-          </li>
-        </ul>
-        <h2>TIRTA GANGGA WATER PALACE</h2>
-        <p>
-          Tirta Gangga adalah taman air bersejarah di Karangasem, Bali, yang
-          dibangun oleh Raja Karangasem pada tahun 1946. Tempat ini terkenal
-          dengan kolam jernih berisi ikan koi, air mancur bertingkat, dan
-          deretan patung Hindu yang indah.
-        </p>
-        <p>Ciri khasnya:</p>
-        <ul>
-          <li>
-            Kolam besar dengan <b>batu pijakan</b> untuk berjalan di atas air.
-          </li>
-          <li>
-            Suasana asri dikelilingi taman, pepohonan, dan arsitektur khas Bali.
-          </li>
-          <li>
-            Sumber air suci yang digunakan untuk upacara keagamaan masyarakat
-            setempat.
-          </li>
+
+        <ul class="detail-list">
+          <li>✅ Pantai Pandawa</li>
+          <li>✅ Pura Uluwatu</li>
+          <li>✅ Tari Kecak</li>
+          <li>✅ Driver ramah & mobil nyaman</li>
         </ul>
 
-        <img src="./img/virgin.png" alt="Pura Lempuyang" />
-        <p><b>Option:</b></p>
-        <p></p>
-        <ul>
-          <li>Taman Ujung</li>
-          <li>virgin Beach</li>
-          <li>Snorkling Blue Lagoon</li>
-        </ul>
+        <a href="booking.html" class="btn-book">Booking Sekarang</a>
+      </div>
 
-        <div class="price-box">
-          Harga: Rp 450.000 – Rp 650.000 (tergantung jumlah peserta)
+      <!-- KANAN : panel kecil -->
+      <aside class="detail-side">
+        <div class="side-card">
+          <h3>Paket Lainnya</h3>
+
+          <div class="side-item">
+            <img src="img/ubud.jpg" alt="Ubud Tour" />
+            <div>
+              <h4>Ubud Tour</h4>
+              <a href="ubud-tour.html">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="side-item">
+            <img src="./img/watersport.png" alt="Adventure Tour" />
+            <div>
+              <h4>Adventure Tour</h4>
+              <a href="adventure-tour.html">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="side-item">
+            <img src="./img/lempuyang-tirtagangga.png" alt="Adventure Tour" />
+            <div>
+              <h4>East Bali Tour</h4>
+              <a href="east-bali-tour.html">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="side-item">
+            <img src="./img/south.png" alt="Adventure Tour" />
+            <div>
+              <h4>South Bali Tour</h4>
+              <a href="south-bali-tour.html">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="side-item">
+            <img src="./img/penida.jpg" alt="Adventure Tour" />
+            <div>
+              <h4>Nusa Penida</h4>
+              <a href="nusa-penida tour.html">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="side-item">
+            <img src="./img/tanahlot.jpeg" alt="Adventure Tour" />
+            <div>
+              <h4>Tanah Lot</h4>
+              <a href="tanah-lot-tour.html">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="side-item">
+            <img src="./img/waterfall.jpg" alt="Adventure Tour" />
+            <div>
+              <h4>Water Fall Tour</h4>
+              <a href="water-fall-tour.html">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="side-item">
+            <img src="./img/jeep.jpg" alt="Adventure Tour" />
+            <div>
+              <h4>Jeep Tour</h4>
+              <a href="jeep-tour.html">Lihat Detail</a>
+            </div>
+          </div>
         </div>
-        <p></p>
-
-        <p><b>Termasuk:</b></p>
-        <ul>
-          <li>Driver + BBM</li>
-          <li>Hotel pick up & drop off</li>
-          <li>Mobil AC</li>
-          <li>Biaya Parkir</li>
-          <li>Air Mineral</li>
-          <li>English Speaking driver</li>
-        </ul>
-
-        <a href="index.html" class="back">⬅ Kembali ke Beranda</a>
-        <a href="booking1.html" class="back">📧 Email</a>
-        <a href="tel:08123456789" class="back">📞 Telepon</a>
-        <a href="https://wa.me/6285886022912" class="back">💬 WhatsApp</a>
+      </aside>
+      <!-- ITEM 4 -->
+      <div class="vw-card">
+        <div class="vw-body">
+          <ul>
+            <h3>✅<b>-- INCLUDE --</b></h3>
+            <li>👨‍✈️ English Speaking driver</li>
+            <li>💵 Biaya Parkir</li>
+            <li>⛽ BBM Include</li>
+            <li>💧 Free Mineral Water</li>
+            <li>🏨 Hotel pick up & drop off</li>
+            <li>🕒 Durasi 10 Jam</li>
+            <p>Rp 1.600.000</p>
+          </ul>
+        </div>
       </div>
     </section>
-
-    <!--About section end-->
-
     <!--Footer start-->
-    <footer>
-      <div class="socials">
-        <a href="https://instagram.com/bracukana"
-          ><i data-feather="instagram"></i
-        ></a>
-        <a href="#"><i data-feather="twitter"></i></a>
-        <a href="https://facebook.com/PAN NANA"
-          ><i data-feather="facebook"></i
-        ></a>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Andika Bali Tour</h3>
+          <p>Private Tour • Airport Transfer • Car Rental • Activities</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Kontak</h4>
+          <p><i class="fa-solid fa-phone"></i> +6287860149894</p>
+          <p>
+            <i class="fa-solid fa-envelope"></i> Igedeandikaputra02@gmail.com
+          </p>
+          <p><i class="fa-brands fa-whatsapp"></i> WhatsApp Tersedia 24 Jam</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#paket">Paket Tour</a></li>
+            <li><a href="#rental">Car Rental</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Ikuti Kami</h4>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://instagram.com/gdeandikaputra"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+          <a href="ulasan.html" class="detail-btn">Kirim Ulasan</a>
+        </div>
       </div>
-      <div class="column">
-        <h3>Kontak</h3>
-        <h3>Jam Buka</h3>
-        <p>Telepon: <a href="tel:08123456789">0812-3456-789</a></p>
-        <div class="column"></div>
-        <p>Telepon: <a href="tel:08123456789">0812-3456-789</a></p>
-        <p>SETIAP HARI</p>
-        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
-      </div>
-      <div class="credit">
-        <p>Created by <a href="#home">@andikabalitour</a>. | &copy; 2025.</p>
+
+      <div class="footer-bottom">
+        © 2025 Andika Bali Tour • All Rights Reserved
       </div>
     </footer>
     <!--Footer end-->
@@ -415,6 +561,52 @@
         } else {
           m.pause();
         }
+      }
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", function (e) {
+          const nama = document.querySelector("input[name='Nama']").value;
+          const wa = document.querySelector("input[name='WhatsApp']").value;
+          const mulai = document.querySelector(
+            "input[name='Tanggal_Mulai']"
+          ).value;
+          const selesai = document.querySelector(
+            "input[name='Tanggal_Selesai']"
+          ).value;
+          const orang = document.querySelector(
+            "input[name='Jumlah_Orang']"
+          ).value;
+          const paket = document.querySelector("select[name='Paket']").value;
+          const catatan = document.querySelector(
+            "textarea[name='Catatan']"
+          ).value;
+
+          const pesan = `Booking Baru:
+Nama: ${nama}
+WA: ${wa}
+Tanggal: ${mulai} sampai ${selesai}
+Jumlah Orang: ${orang}
+Paket: ${paket}
+Catatan: ${catatan}`;
+
+          // Arahkan ke WhatsApp
+          setTimeout(() => {
+            window.open(
+              "https://wa.me/6287860149894?text=" + encodeURIComponent(pesan)
+            );
+          }, 500);
+        });
+      function togglePaket(el) {
+        el.classList.toggle("active");
+
+        // Ambil semua yang active
+        let selected = [];
+        document
+          .querySelectorAll(".paket-toggle .opt.active")
+          .forEach((opt) => selected.push(opt.dataset.val));
+
+        // masukkan ke input hidden
+        document.getElementById("paketValue").value = selected.join(", ");
       }
     </script>
   </body>
